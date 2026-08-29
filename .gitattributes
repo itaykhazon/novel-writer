@@ -1,0 +1,13 @@
+# Normalize line endings so the vault behaves the same whether it's edited
+# from Windows, macOS, or Linux (Codex CLI, Claude Code, and Obsidian can
+# all touch these files from different machines).
+* text=auto eol=lf
+
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary

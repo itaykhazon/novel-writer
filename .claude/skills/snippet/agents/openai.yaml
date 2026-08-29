@@ -1,0 +1,4 @@
+interface:
+  display_name: "Snippet"
+  short_description: "Capture an {{NOVEL_TITLE}} fragment for later use"
+  default_prompt: "Use $snippet to create and save a random {{NOVEL_TITLE}} fragment for later incorporation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anti-AI Prose Review"
+  short_description: "Flag model-shaped prose and draft exact fixes"
+  default_prompt: "Use $anti-ai-prose-review to review this fiction passage for recurring AI-shaped prose patterns and suggest voice-matched replacements."

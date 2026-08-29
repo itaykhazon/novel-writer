@@ -1,0 +1,4 @@
+interface:
+  display_name: "Target Audience Readthrough"
+  short_description: "Opinionated cold-reader engagement feedback"
+  default_prompt: "Use $target-audience-readthrough to map which manuscript segments thrilled me, held me, bored me, became a slog, or felt underdeveloped."

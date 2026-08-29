@@ -1,0 +1,27 @@
+# Obsidian workspace state — local to each machine, not project content
+.obsidian/
+.trash/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+
+# Python (used by several skills' bundled scripts)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated build artifacts — export-novel-pdf's default output location.
+# Remove this line if you want finished PDFs tracked in the repo.
+output/pdf/
+
+# Scratch/temp files
+*.tmp
+/tmp/

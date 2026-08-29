@@ -1,0 +1,4 @@
+interface:
+  display_name: "Export Novel PDF"
+  short_description: "Export polished, phone-friendly novel PDFs"
+  default_prompt: "Use $export-novel-pdf to export the requested manuscript chapters as a verified, phone-friendly PDF."

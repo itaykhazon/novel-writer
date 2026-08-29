@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tweak {{NOVEL_TITLE}} Outline"
+  short_description: "Map story-wide consequences of outline changes"
+  default_prompt: "Use $tweak-outline to map how this proposed outline change should ripple through {{NOVEL_TITLE}} before editing source files."
