@@ -3,11 +3,11 @@ type: index
 tags: [index, ai-orientation]
 ---
 
-# {{NOVEL_TITLE}} Codex — Start Here
+# Codex — Start Here
 
 This index exists to orient an AI assistant fast at the start of a writing session — read this file first, before opening anything else. It's a map plus the current manuscript state, not just a list of links.
 
-> **New project setup:** this whole codex is a boilerplate. Before your first real writing session, replace every `{{NOVEL_TITLE}}` placeholder across this vault (a global find-and-replace) with your book's actual title, and fill in the sections below marked `<fill in>`. See the vault-level `README.md` for the full setup checklist, or run `populate-project` to fill in the genre/style/craft reference files via an interview plus web research.
+> **New project setup:** this whole codex is a boilerplate. Before your first real writing session, set your book's title in `codex/project.json` and fill in the sections below marked `<fill in>`. Nothing else in this vault hardcodes the title — `project.json` is the single place it lives, so there is no find-and-replace to do. See the vault-level `README.md` for the full setup checklist, or run `populate-project`, which writes `project.json` and fills in the genre/style/craft reference files via an interview plus web research.
 
 ## Manuscript status (keep this current)
 

@@ -22,7 +22,7 @@ Focus on these core error categories:
 - Deliberate sentence fragments or short sentences (stylistic in fiction)
 - Creative capitalization or punctuation for voice/effect
 - Formatting (italics, bold, spacing, indentation)
-- System alerts, technical readouts in all caps (sci-fi formatting)
+- In-fiction interface text, alerts or technical readouts in all caps, where the novel uses that convention
 - Scene-setting text in italics
 - Stylistic dialogue punctuation or dialect/accent writing
 - Factual accuracy, worldbuilding, continuity, or continuity issues
@@ -93,7 +93,7 @@ consumable by `draft-from-review` as a straight find/replace.
 
 ---
 
-*Proofreading completed for {{NOVEL_TITLE}} novel.*
+*Proofreading completed for this novel.*
 ```
 
 ## Workflow

@@ -1,9 +1,9 @@
 ---
 name: tweak-outline
-description: Analyze a proposed change to the {{NOVEL_TITLE}} novel's existing outline and produce a detailed, source-backed impact map across written canon, chapter plans, arc outlines, plot threads, macro progression, mystery tracking, character/location/mechanic lore, summaries, indexes, and status metadata. Use when the user wants to tweak, restructure, replace, move, add, or remove an outline beat; change a chapter, arc, progression system, mystery sequence, or ending; incorporate structural feedback into the plan; retcon a planned or drafted event; or understand every story and codex consequence before approving edits. Produce a report only; do not edit manuscript, outline, summary, or codex source files.
+description: Analyze a proposed change to this novel's existing outline and produce a detailed, source-backed impact map across written canon, chapter plans, arc outlines, plot threads, macro progression, mystery tracking, character/location/mechanic lore, summaries, indexes, and status metadata. Use when the user wants to tweak, restructure, replace, move, add, or remove an outline beat; change a chapter, arc, progression system, mystery sequence, or ending; incorporate structural feedback into the plan; retcon a planned or drafted event; or understand every story and codex consequence before approving edits. Produce a report only; do not edit manuscript, outline, summary, or codex source files.
 ---
 
-# Tweak an {{NOVEL_TITLE}} Outline
+# Tweak an Outline
 
 Turn a proposed story change into a complete implementation map. Reconstruct the current causal chain, design the smallest coherent revised chain, and identify every artifact that must change or be verified. Do not apply the change.
 
@@ -51,7 +51,7 @@ Then read the smallest complete dependency set:
 - linked character, voice, location, faction, mechanic, equipment, and motif notes needed to test the proposal;
 - targeted passages from `codex/00 Braindump.md` when future intent is implicated.
 
-For a multi-arc change, ending revision, new central antagonist, new progression spine, or altered climax, also read all arc files, all affected main/subplot threads, and `codex/outline/Sanderson Method — {{NOVEL_TITLE}} Working Guide.md` completely.
+For a multi-arc change, ending revision, new central antagonist, new progression spine, or altered climax, also read all arc files, all affected main/subplot threads, and `codex/outline/Sanderson Method — Working Guide.md` completely.
 
 Search the whole vault for:
 
@@ -139,7 +139,7 @@ Test the chain for:
 - causal coupling between plot, character, and setting;
 - an ending earned by earlier choices rather than a last-minute exception.
 
-Do not let a new helper, rebel faction, System permission, gate exception, or unexplained technology solve the climax unless its limitation, cost, access path, and earlier setup are included in the map.
+Do not let a new helper, a faction that appears on cue, a newly granted permission, a rule exception, or unexplained technology solve the climax unless its limitation, cost, access path, and earlier setup are included in the map.
 
 ## 6. Write the impact map
 
@@ -248,5 +248,5 @@ End by summarizing the recommended integration, the number of required source fi
 ## Calibration examples
 
 - **Drafted chapter tactic changes:** expect a manuscript retcon decision, chapter changelog, `Outline.md`, `Summary.md`, relevant voice/mechanic notes, and the next chapter's resource/physical entry state. Do not rewrite an entire arc when the exit state stays unchanged.
-- **Removing timers/tiers and adding broadcasts:** trace the drafted rule statement, any established institution/System/Braindump rules, progression promise, affected chapter titles and difficulty beats, broadcast mechanic, recurring commentators/guide, public-reputation consequences, and finale use of the broadcast.
+- **Replacing one of the world's own rules with another** (a deadline structure swapped for a public-exposure structure, say): trace the drafted rule statement, any established institutional or Braindump rules it touches, the progression promise, affected chapter titles and difficulty beats, the replacement mechanic, any recurring character whose role depends on the old rule, downstream reputation or consequence effects, and how the finale uses the new mechanic.
 - **Replacing a passive end-of-book choice with an escape/infiltration:** rebuild the ending backward—destination access, credential or means, opposition response, ally contribution, mystery discoveries that supply each prerequisite, new multi-arc pressure thread, and the revised sequel hook—while preserving any deliberate worldbuilding gaps unless the user decides them.

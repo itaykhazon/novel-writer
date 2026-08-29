@@ -2,12 +2,38 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 import re
 from pathlib import Path
 
-# Customize for your project: the title used on the cover page, the running
-# header, and the default output filename when --title isn't passed.
-NOVEL_TITLE = "{{NOVEL_TITLE}}"
+# The title used on the cover page, the running header, and the default output
+# filename when --title isn't passed. Read from codex/project.json at run time
+# rather than hardcoded, so this script needs no per-project editing; build()
+# sets it once from --root before anything renders.
+NOVEL_TITLE = "Untitled Novel"
+
+
+def load_project_title(root: Path) -> str:
+    """Return the novel's title from <root>/codex/project.json.
+
+    Missing, unreadable or malformed file is not fatal — an export with a
+    placeholder title is more useful than no export, and --title overrides
+    this anyway. Warn once so it's visible rather than silently wrong.
+    """
+    config = Path(root) / "codex" / "project.json"
+    try:
+        with open(config, encoding="utf-8") as handle:
+            title = json.load(handle).get("title", "").strip()
+    except FileNotFoundError:
+        print(f"warning: {config} not found; using placeholder title")
+        return NOVEL_TITLE
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"warning: could not read {config} ({exc}); using placeholder title")
+        return NOVEL_TITLE
+    if not title:
+        print(f"warning: {config} has no \"title\"; using placeholder title")
+        return NOVEL_TITLE
+    return title
 
 
 def load_dependencies():
@@ -116,6 +142,8 @@ def block_markup(lines):
 
 
 def build(args):
+    global NOVEL_TITLE
+    NOVEL_TITLE = load_project_title(args.root)
     deps = load_dependencies()
     colors = deps["colors"]
     TA_CENTER, TA_LEFT = deps["TA_CENTER"], deps["TA_LEFT"]

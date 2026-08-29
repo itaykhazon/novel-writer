@@ -17,9 +17,9 @@ Use these examples to clarify a diagnosis, not to make the report sound authorit
 - Begin with **Comparable craft move:** and include the title, author, and spoiler scope.
 - Paraphrase the story and the author's commentary. Do not quote novels.
 - Never impersonate an author or write “In Mistborn I did...” Use “In *Mistborn*, Sanderson...”
-- Do not claim that Sanderson endorses a proposed {{NOVEL_TITLE}} rewrite. State only the comparison.
+- Do not claim that Sanderson endorses a proposed rewrite. State only the comparison.
 - Link the official lecture or author annotation supporting commentary.
-- Explain both sides of the analogy: what the published example accomplishes and what specific adjustment could produce the same function in {{NOVEL_TITLE}}.
+- Explain both sides of the analogy: what the published example accomplishes and what specific adjustment could produce the same function in this novel.
 - Use no more than one comparison per finding unless contrasting two techniques is the point.
 - Mark spoilers before details.
 
@@ -31,7 +31,7 @@ Use these examples to clarify a diagnosis, not to make the report sound authorit
 
 **Spoilers: premise and drafting history.** Sanderson's early version leaned harder on scamming or robbing the Lord Ruler. During drafting, the novel became more centrally about rebellion and overthrow. He later described the original plan scene as offering false promises and revised it so the crew's stated job matched the book's actual direction. This is useful when a chapter technically introduces the right pieces but frames the wrong one as the central contract.
 
-**{{NOVEL_TITLE}} application:** Do not add more reminders of a misleading promise unless the story intends a deliberate redirection. Reframe the scene's goal or emphasis so the reader anticipates the plot the outline will progress.
+**Application:** Do not add more reminders of a misleading promise unless the story intends a deliberate redirection. Reframe the scene's goal or emphasis so the reader anticipates the plot the outline will progress.
 
 Sources: [Mistborn Deleted Scene #6](https://www.brandonsanderson.com/blogs/blog/mistborn-deleted-scene-6), [Annotation: Mistborn Chapter 26](https://www.brandonsanderson.com/blogs/blog/annotation-mistborn-chapter-twenty-six).
 
@@ -63,7 +63,7 @@ Source: [Annotation: Mistborn 2 Chapter 13](https://www.brandonsanderson.com/blo
 
 **Spoilers: early Bridge Four arc.** Bridge runs recur, but the state does not. Kaladin begins tending wounded men, finds resources, learns names, creates shared food and routines, trains the crew, and turns isolated survival into cooperation. Sanderson's early outline shows these small steps explicitly, while his annotations acknowledge the danger of long stretches where a depressed protagonist cannot act.
 
-**{{NOVEL_TITLE}} application:** A second or third dungeon cannot merely prove that the same team combination still works. Change at least one measurable state: trust, role ownership, System knowledge, resource cost, contract difficulty, or voluntary behavior back in the room.
+**Application:** A second or third pass through the same kind of challenge cannot merely prove that the same approach still works. Change at least one measurable state: trust, who owns which role, what the characters understand about the rules, resource cost, difficulty, or how someone behaves once the pressure is off.
 
 Sources: [The Way of Kings early outlines](https://www.brandonsanderson.com/blogs/blog/the-way-of-kings-early-brainstorms-outlines), [Annotation: The Way of Kings Chapter 9](https://www.brandonsanderson.com/blogs/blog/annotation-the-way-of-kings-chapter-9).
 
@@ -73,7 +73,7 @@ Sources: [The Way of Kings early outlines](https://www.brandonsanderson.com/blog
 
 **Spoilers: broad structure.** Sanderson's structure lecture points to the incremental training as a reason the final victory feels authentic. Individual exercises acquire new meaning when their accumulated function becomes clear.
 
-**{{NOVEL_TITLE}} application:** Before a new fragment combination, arm function, or team maneuver wins a climactic fight, show intermediate control, failure, and recombination. The reader should recognize the ingredients even if the final use surprises them.
+**Application:** Before a new combination of tools, abilities, or group tactics wins a climactic scene, show intermediate control, failure, and recombination. The reader should recognize the ingredients even if the final use surprises them.
 
 Source: [Sanderson's 2025 Overview of Story Structure](https://www.brandonsanderson.com/blogs/blog/brandon-sandersons-2025-overview-of-story-structure-lecture-3).
 
@@ -83,7 +83,7 @@ Source: [Sanderson's 2025 Overview of Story Structure](https://www.brandonsander
 
 **Spoilers: original-trilogy broad arc.** Sanderson uses Luke's training and failures to illustrate attempts that expose limitations, overconfidence, and missing understanding before later success. Each failure should teach or change something.
 
-**{{NOVEL_TITLE}} application:** Replace another exchange at the same tactical level with an attempt that reveals a new constraint, worsens the cost, or forces a character to abandon their habitual method.
+**Application:** Replace another exchange at the same tactical level with an attempt that reveals a new constraint, worsens the cost, or forces a character to abandon their habitual method.
 
 Source: [Sanderson's 2025 Overview of Story Structure](https://www.brandonsanderson.com/blogs/blog/brandon-sandersons-2025-overview-of-story-structure-lecture-3).
 
@@ -95,7 +95,7 @@ Source: [Sanderson's 2025 Overview of Story Structure](https://www.brandonsander
 
 **Spoilers: Helm's Deep.** Sanderson highlights Gandalf's promised return at a specified time. The battle becomes desperate enough that the audience's attention moves from the earlier promise to immediate survival; fulfillment arrives exactly as prepared yet feels cathartic rather than routine.
 
-**{{NOVEL_TITLE}} application:** Keep an established rescue, resource, magazine cure, or team contribution visible early, then let worsening pressure make it feel insufficient. Do not conceal or change the rule merely to manufacture surprise.
+**Application:** Keep an established escape route, resource, remedy, or ally's contribution visible early, then let worsening pressure make it feel insufficient. Do not conceal or change the rule merely to manufacture surprise.
 
 Source: [Sanderson's 2025 Guide to Plot](https://www.brandonsanderson.com/blogs/blog/brandon-sandersons-2025-guide-to-plot-lecture-2).
 
@@ -105,7 +105,7 @@ Source: [Sanderson's 2025 Guide to Plot](https://www.brandonsanderson.com/blogs/
 
 **Spoilers: Kelsier's plan.** Sanderson has explained that Kelsier's fuller plan solidified during drafting, after which earlier material needed revision to seed it. He also identifies a weakness: withholding too much from the reader while in Kelsier's viewpoint required extra explanation after the reveal.
 
-**{{NOVEL_TITLE}} application:** If the climax depends on a plan, capability, or intention discovered late in drafting, plant fair behavioral or mechanical evidence earlier. Do not solve the gap with a post-payoff explanation paragraph.
+**Application:** If the climax depends on a plan, capability, or intention discovered late in drafting, plant fair behavioral or mechanical evidence earlier. Do not solve the gap with a post-payoff explanation paragraph.
 
 Source: [Annotation: Mistborn Chapter 35](https://www.brandonsanderson.com/blogs/blog/annotation-mistborn-chapter-thirty-five-part-one).
 
@@ -125,7 +125,7 @@ Source: [Annotation: Mistborn 2 Chapter 47](https://www.brandonsanderson.com/blo
 
 **Spoilers: trilogy ending.** Sanderson's epilogue notes that the return of green plants and blue sky fulfills a promise present since the first book's hostile environment. Flowers and an earlier image carry emotional force because the transformed world makes the abstract victory concrete.
 
-**{{NOVEL_TITLE}} application:** Use the room, flowers, repairs, System language, or stored heat as changed physical evidence of an arc's resolution. Avoid explaining the theme after the image has already delivered it.
+**Application:** Use a changed room, a repaired object, an altered habit, or a shift in how a character talks as physical evidence of an arc's resolution. Avoid explaining the theme after the image has already delivered it.
 
 Source: [Annotation: Mistborn 3 Epilogue](https://www.brandonsanderson.com/blogs/blog/annotation-mistborn-3-epilogue).
 
@@ -137,7 +137,7 @@ Source: [Annotation: Mistborn 3 Epilogue](https://www.brandonsanderson.com/blogs
 
 **Spoilers: opening chapters only.** Sanderson's prologue annotation explains that he first showed what Allomancy looked like in action, then delayed the detailed explanation until later because the opening could not support a full rules lesson. Later action can depend on understanding once that understanding has been taught.
 
-**{{NOVEL_TITLE}} application:** A first appearance may create wonder through effect, but a later problem-solving payoff requires the relevant rule and limitation to become legible beforehand.
+**Application:** A first appearance may create wonder through effect, but a later problem-solving payoff requires the relevant rule and limitation to become legible beforehand.
 
 Source: [Annotation: Mistborn Prologue, Part Two](https://www.brandonsanderson.com/blogs/blog/annotation-mistborn-prologue-part-two).
 
@@ -147,7 +147,7 @@ Source: [Annotation: Mistborn Prologue, Part Two](https://www.brandonsanderson.c
 
 **Spoilers: magic-system rules only.** Sanderson's annotation describes adding firm restrictions to speed bubbles because a more permissive version would allow characters to solve combat too easily. The limitations force different tactical choices.
 
-**{{NOVEL_TITLE}} application:** Preserve recharge time, body-mass loss, firing lanes, injury, heat budgets, directional force, and imperfect System knowledge at the exact moment they become inconvenient. Do not suspend a cost to preserve an outlined victory.
+**Application:** Preserve recovery time, physical toll, sightlines and positioning, injury, finite supplies, and the characters' incomplete understanding of the rules at the exact moment those become inconvenient. Do not suspend a cost to preserve an outlined victory.
 
 Source: [Annotation: The Alloy of Law Chapter 12](https://www.brandonsanderson.com/blogs/blog/annotation-the-alloy-of-law-chapter-twelve).
 
@@ -169,7 +169,7 @@ Source: [Sanderson's Tolkien Lecture on Fantasy](https://www.brandonsanderson.co
 
 **Spoilers: premise.** In Sanderson's character lecture, Mulan's decision to replace her father is satisfying because the story has already established her creative problem-solving and her bond with him. Motivation and capability converge into proactive action.
 
-**{{NOVEL_TITLE}} application:** Before a character owns a plan, blocks an attack, smuggles evidence, or chooses investigation, make sure the scene activates their specific value and practiced method—not merely the outline's need for someone to act.
+**Application:** Before a character takes charge of a plan, intervenes, conceals something, or chooses to investigate, make sure the scene activates their specific value and practiced method—not merely the outline's need for someone to act.
 
 Source: [Proactive, Relatable, and Capable Characters](https://www.brandonsanderson.com/blogs/blog/creating-proactive-relatable-and-capable-characters-brandon-sandersons-writing-lecture-5-2025).
 

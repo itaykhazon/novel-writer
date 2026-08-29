@@ -3,7 +3,7 @@ type: index
 tags: [writing-style, ai-orientation]
 ---
 
-# {{NOVEL_TITLE}} Writing Style
+# Writing Style
 
 These rules are always in effect when outlining, drafting, rewriting, or reviewing prose. This file is the single source of truth other skills quote from (`draft-chapter`, `chapter-cycle`'s `house-conventions.md`, `prose-review`, `pacing-review`, `anti-ai-prose-review`) — keep it current rather than letting a copy drift in a skill file. None of those skills assume a particular POV, tense, or genre; they all read this file (and `codex/Craft Influences.md`, if populated) for the actual answer. See `populate-project` for a guided way to fill this file in via an interview plus web research on your comp titles.
 
@@ -28,7 +28,7 @@ These rules are always in effect when outlining, drafting, rewriting, or reviewi
 - Units: <e.g. "imperial" or "metric" — pick one>
 - Scene breaks: <e.g. "a bare `—` on its own line">
 - Chapter openers: <if chapters open with a recurring convention — location/date line, epigraph, etc — describe its exact format>
-- In-fiction system/UI text (only if applicable — a LitRPG stat panel, HUD readout, magic-system interface): <give the exact rendering format, punctuation and all>
+- In-fiction interface or document text (only if applicable — an in-world letter or report, a HUD readout, a magic-system interface, a progression stat panel): <give the exact rendering format, punctuation and all>
 - Target chapter length: <e.g. "3,000–4,500 words">
 
 ## Frequently broken continuity

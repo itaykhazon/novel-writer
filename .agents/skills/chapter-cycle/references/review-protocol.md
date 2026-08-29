@@ -12,23 +12,28 @@ was the single largest waste in the whole cycle.
 | `proofread` | cheapest/fastest available | Spelling, punctuation, agreement — pattern-matching against a fixed rulebook |
 | `pacing-review` | mid-tier | Structural judgment, but bounded by the outline's beat list |
 | `prose-review` | mid-tier | Craft judgment, bounded by the voice files in the bundle |
+| `anti-ai-prose-review` | cheapest/fastest available | `scan_prose.py` does the counting; the reviewer only judges which candidates cost the prose something |
 | `continuity-reviewer` | your best-reasoning tier | Cross-references many facts, including the chapter's own Summary and codex pages for numeric/tag drift (Cross-Artifact Fact Consistency) — the only one with a real reasoning load |
 
 Escalate one reviewer to your top tier only if a specific chapter has an unusual
 demand (a new POV character, a mechanic being rewritten) — and say why in the
 changelog.
 
-## Running the four reviewers
+## Running the five reviewers
 
-Run `proofread`, `pacing-review`, `prose-review`, and `continuity-reviewer`
-against the drafted chapter. If your environment supports running multiple
+Run `proofread`, `pacing-review`, `prose-review`, `continuity-reviewer`, and
+`anti-ai-prose-review` against the drafted chapter. If your environment supports running multiple
 independent passes concurrently (parallel agent/session invocations), run all
 four at once — they're independent of each other and don't need to see one
 another's output. If it doesn't, run them one after another in any order;
 there's no dependency between them.
 
 For each reviewer, give it exactly two things and nothing else: the chapter
-working copy, and the context bundle built in Phase 0. Below is the prompt
+working copy, and the context bundle built in Phase 0. `anti-ai-prose-review`
+gets a third: run its `scan_prose.py` over the working copy first and paste the
+output into its prompt. The script computes densities and baselines exactly;
+asking the model to estimate them instead wastes the pass and gets worse
+numbers. Below is the prompt
 template to adapt — substitute the bracketed parts, keep the rest close to
 verbatim, since the constraints are what stop the reviewer from wandering off
 and re-exploring the vault:
@@ -55,9 +60,17 @@ and re-exploring the vault:
 > to a reader, its small payoff/setup receives proportionate page weight, and
 > every scene produces a meaningful change or deliberately earns its stillness.
 >
+> For `anti-ai-prose-review` specifically: the scan output above is candidates,
+> not findings. Judge each in context and report only the ones that cost the
+> prose something — a device the reader will start anticipating, a cadence that
+> has become a loop, a reaction beat doing no work. Do not report a pattern
+> merely because it is present, do not treat the scan as an authorship
+> determination, and do not propose mechanical rewrites that drive a count to
+> zero at the expense of the sentence.
+>
 > For `continuity-reviewer` specifically: the bundle's "Planned summary" section
 > is the chapter's current `Summary.md` — cross-check every percentage, count,
-> rank tag, and placement in the chapter against what that section (and any
+> rank or classification tag, and placement in the chapter against what that section (and any
 > codex mechanics page in the bundle) claims for the same fact, and flag a
 > disagreement even if the Summary and codex already agree with each other.
 > Also verify payoff legality: any capability that solves a problem must have
@@ -112,7 +125,7 @@ habits round 1 removed. Check for these before the regression round:
   already doing that work.
 - **Statement → explanation → aphorism** — the same realization delivered three
   times. Keep two movements, drop the middle.
-- **Invented numbers** — counts of enemies, rounds, or fragments that don't match
+- **Invented numbers** — counts of opponents, rounds, supplies or distances that don't match
   what's actually on the page. Every number added in a fix needs checking against
   the scene.
 - **Orphaned Summary/codex values** — a round-1 or round-2 fix that changes a
@@ -125,7 +138,7 @@ habits round 1 removed. Check for these before the regression round:
   changed behavior that made an assigned beat perceptible, leaving the event
   technically present but structurally invisible.
 - **Costless repaired payoffs** — a replacement makes a climax cleaner by
-  deleting the heat/ammunition/mass/injury/time cost that made the solution
+  deleting the energy/supply/mass/injury/time cost that made the solution
   obey its established limitations.
 
 ## Final pass

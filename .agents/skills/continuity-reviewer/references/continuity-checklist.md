@@ -88,10 +88,10 @@ Check: Is the object described the same way every time it's mentioned? If a colo
 Check: Is the item being used in a state or location the manuscript hasn't actually shown it reaching yet?
 
 **Watch for compound descriptors in the codex**
-- A codex entry that joins two terms with a slash ("gold/metallic fragment," "red/gold crystal") is not evidence the underlying chapters agree — it's often a sign an earlier pass noticed two different words used across chapters and folded them together instead of resolving which is correct (or deciding both are correct and updating the earlier chapters to match).
+- A codex entry that joins two terms with a slash ("brass/bronze compass," "grey/green cloak") is not evidence the underlying chapters agree — it's often a sign an earlier pass noticed two different words used across chapters and folded them together instead of resolving which is correct (or deciding both are correct and updating the earlier chapters to match).
 - When you see this pattern, open every chapter the bullet cites and compare the actual sentences, not just the codex's summary of them.
 
-Check: Chapter 4 calls it "metallic," Chapter 7 calls it "gold" — does the codex's "gold/metallic" bullet mean this was actually reconciled in the prose, or just noticed and merged in the codex only?
+Check: Chapter 4 calls it "brass," Chapter 7 calls it "bronze" — does the codex's "brass/bronze" bullet mean this was actually reconciled in the prose, or just noticed and merged in the codex only?
 
 ## Cross-Artifact Fact Consistency (High Priority)
 
@@ -107,8 +107,8 @@ agreement look like confirmation instead of the drift it actually is.
 
 **Facts of this shape need a three-way check — prose vs. Summary vs. codex,
 prose wins ties:**
-- Percentages and numeric readouts (a suit's thermal reserve, a stat value)
-- Counts (rounds/magazines remaining, enemies present, days elapsed, fragments deployed)
+- Percentages and numeric readouts (a device's remaining charge, a stat value)
+- Counts (supplies or ammunition remaining, opponents present, days elapsed)
 - Rank, level, or classification tags (e.g. `Level 3, Uncommon` vs. `Level 3, Common`)
 - Physical placement (which limb, which side, where exactly an effect landed)
 - Which hand, arm, or side a piece of gear is used from
@@ -131,7 +131,7 @@ in sync with each other.
 - Did cause-and-effect make sense?
 - Did characters have enough time to react?
 
-Check: Could Alex actually learn about X before reacting to it if X just happened 5 pages ago?
+Check: Could the POV character actually learn about X before reacting to it if X just happened 5 pages ago?
 
 **Story Time Progression**
 - Days, weeks, months passing
@@ -155,30 +155,30 @@ Check: Does this clue confirm a mystery too early? Did the reader already know t
 - Do they need addressing in this chapter?
 - Or are they intentionally saved for later?
 
-Check: The Scout screamed at the end of Chapter 6 — is that addressed in this chapter, or is it an open thread for Chapter 7?
+Check: A question was raised at the end of Chapter 6 — is it addressed in this chapter, or is it an open thread for Chapter 7?
 
 **Character Arc Progression**
 - Is this chapter moving the character closer to their goal?
 - Do their actions align with their known motivations?
 - Are they making progress on their arc?
 
-Check: Alex's determined to figure out the Accord — is he taking steps toward that goal?
+Check: the protagonist is set on uncovering who sent the letter — are they taking steps toward that goal?
 
 **Subplot Status**
 - Minor conflicts introduced earlier
 - Secondary character arcs
 - Recurring motifs or callbacks
 
-Check: Did we forget about Jordan? Is Sam's subplot still moving forward?
+Check: has a secondary character dropped out of the book without explanation? Is their subplot still moving forward?
 
 ## Mechanical & System Consistency (Medium Priority)
 
 **Rule Adherence**
 - Magic/tech system rules (leveling, stat limits, or other established mechanics, if your story has them)
 - Combat mechanics (does the arena have rules?)
-- Social systems (does the Accord work this way?)
+- Social systems (does the institution actually work this way?)
 
-Check: Can Alex gain 5 levels in one chapter? Does that violate the LitRPG rules?
+Check: if your world has a progression or magic system, does this chapter's gain obey its documented rate and cost?
 
 **In-World Logic**
 - How does the economy work?

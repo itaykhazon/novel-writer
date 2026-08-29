@@ -107,7 +107,7 @@ A phrase repeats, several phrases from this family cluster within a page, or the
 
 ### Fix
 
-Use the character's concrete behavior and the scene's actual sensory environment. A refrigerator hum, a magazine seated twice, a thumb worrying a torn seam, or a suit readout can carry silence and emotion without naming either.
+Use the character's concrete behavior and the scene's actual sensory environment. A refrigerator hum, a latch tried twice, a thumb worrying a torn seam, or a line of text on a screen can carry silence and emotion without naming either.
 
 ## C. Vague pseudo-specificity
 
@@ -197,7 +197,7 @@ Use the direct verb, render the visible hesitation, or remove the stage directio
 
 ### Flag when
 
-The device repeats enough for the reader to anticipate its beat. One tricolon or fragment can be excellent. For em dashes, compare against the author's baseline and ignore {{NOVEL_TITLE}}'s bare scene-break line.
+The device repeats enough for the reader to anticipate its beat. One tricolon or fragment can be excellent. For em dashes, compare against the author's baseline and ignore this novel's bare scene-break line.
 
 ### Fix
 

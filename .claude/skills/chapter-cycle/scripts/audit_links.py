@@ -17,15 +17,15 @@ meant to be unresolved.
 
 An orphan is a different problem: the note resolves fine, but no other note
 links to it, so it's invisible in Obsidian's backlink graph even though it's
-discoverable by folder. The 2026-08-15 "Story So Far" audit found three
-drafted chapters' Outline.md files in exactly this state — harmless if that's
+discoverable by folder. A whole-vault audit will typically turn up drafted
+chapters' Outline.md files in exactly this state — harmless if that's
 an intentional convention (drafted outlines are archival), but worth seeing
 explicitly rather than only via a manual whole-vault read. --orphans never
 exits non-zero: an orphan isn't automatically wrong the way a dangling link
 is, it's a fact to judge, not an error to fix.
 
 Usage:
-    python3 audit_links.py --vault /mnt/user-data/uploads/{{NOVEL_TITLE}}
+    python3 audit_links.py --vault <vault-root>
     python3 audit_links.py --vault ... --strict     # exit 1 if anything dangles
     python3 audit_links.py --vault ... --orphans    # also list zero-inbound notes
 """

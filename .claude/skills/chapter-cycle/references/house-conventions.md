@@ -1,4 +1,4 @@
-# {{NOVEL_TITLE}} house conventions
+# House conventions
 
 > **Fill this file in for your own novel before relying on it.** The Voice,
 > Structural execution, and Continuity habits sections below are genre-neutral
@@ -51,7 +51,7 @@ drafting a chapter or building an export can follow them without guessing.
 - **Scene breaks:** [e.g. "a bare `—` on its own line."]
 - **Chapter openers:** [if chapters open with a recurring convention — a
   location/date line, an epigraph, a POV tag — describe its exact format here.]
-- **In-fiction system/UI text** (only if your novel has one — a LitRPG stat
+- **In-fiction interface or document text** (only if your novel has one — an in-world report or letter, a HUD readout, a magic-system interface, a progression stat
   panel, a HUD readout, a magic-system interface, in-world documents, etc.):
   give the *exact* rendering format, e.g.:
   ```
@@ -62,7 +62,7 @@ drafting a chapter or building an export can follow them without guessing.
   the kind of formatting detail that silently drifts across chapters if it's
   only "remembered" rather than written down.
 - **Any other recurring formatting convention:** [e.g. how a particular
-  character's dialogue is rendered, how creature/opponent stat blocks are
+  character's dialogue is rendered, how opponent or creature stat blocks are
   tagged, etc.]
 - Target chapter length: [e.g. "3,000–4,500 words."]
 
@@ -89,7 +89,7 @@ time.
   contract. Make its progress signpost visible in prose; a beat code in
   frontmatter is not evidence the reader experienced a change.
 - Let climactic solutions recombine established tools. Do not introduce a new
-  power, mineral, rule, or item at the point where it solves the problem.
+  power, material, rule, or item at the point where it solves the problem.
 - Enforce limitations and current resource state at the moment of payoff: a
   cost must be earned before it is spent, equipment must be ready, resources
   must cost what they're established to cost, injuries must constrain action,

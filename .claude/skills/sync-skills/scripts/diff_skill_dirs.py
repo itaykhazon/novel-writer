@@ -19,13 +19,24 @@ import os
 import sys
 
 
+# Machine-generated or editor-local files. These appear on whichever side last
+# ran a script and would otherwise report as drift on every run after a test —
+# noise that trains you to ignore this tool's output, which is the one thing it
+# cannot afford.
+IGNORED_DIRS = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".DS_Store"}
+IGNORED_SUFFIXES = (".pyc", ".pyo", ".swp", ".swo", "~")
+
+
 def walk_files(root):
-    """Return {relative_path: sha256} for every file under root."""
+    """Return {relative_path: sha256} for every meaningful file under root."""
     out = {}
     if not os.path.isdir(root):
         return out
-    for dirpath, _dirs, files in os.walk(root):
+    for dirpath, dirs, files in os.walk(root):
+        dirs[:] = [d for d in dirs if d not in IGNORED_DIRS]
         for f in files:
+            if f.endswith(IGNORED_SUFFIXES) or f in IGNORED_DIRS:
+                continue
             full = os.path.join(dirpath, f)
             rel = os.path.relpath(full, root).replace(os.sep, "/")
             with open(full, "rb") as fh:

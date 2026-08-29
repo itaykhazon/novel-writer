@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Assemble a single self-contained review bundle for one {{NOVEL_TITLE}} chapter.
+"""Assemble a single self-contained review bundle for one chapter.
 
 The point: reviewer subagents should read ONE file, not explore the vault.
-On Chapter 7 a reviewer spent 23 Read calls and 48 turns discovering which
-codex files mattered; that discovery is deterministic and belongs here.
+In the run this was built for, a reviewer spent 23 Read calls and 48 turns
+discovering which codex files mattered; that discovery is deterministic and
+belongs here.
 
 Usage:
-    python3 build_bundle.py --vault /mnt/user-data/uploads/{{NOVEL_TITLE}} \
+    python3 build_bundle.py --vault <vault-root> \
         --arc 1 --chapter 7 --out /tmp/chapter-cycle/bundle.md
 """
 
@@ -17,7 +18,8 @@ import sys
 
 TAIL_WORDS = 900          # closing prose of the previous chapter to include
 MAX_CODEX_CHARS = 9000    # per codex entry; the big backstory notes otherwise
-                          # swallow the bundle (Jordan.md alone is ~23k chars)
+                          # swallow the bundle — a single deep character note
+                          # can run past 20k chars on its own
 
 
 def die(msg):
@@ -90,7 +92,8 @@ def index_codex(vault):
     """Map lowercased note stem -> path, for every .md under codex/.
 
     Also indexes each note's frontmatter `aliases:`, so a link like
-    [[Riley's Species]] resolves to the note that actually holds it. Real
+    [[The Ashfolk]] resolves to the note that actually holds it under another
+    name. Real
     filenames always win over an alias.
     """
     idx, alias = {}, {}

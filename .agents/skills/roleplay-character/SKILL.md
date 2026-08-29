@@ -1,9 +1,9 @@
 ---
 name: roleplay-character
-description: Roleplay an {{NOVEL_TITLE}} character from their voice guide, codex facts, relationships, motivations, memories, and current story state, while preserving their knowledge limits and psychological continuity. Use when the user asks Codex to roleplay, act, speak, answer, improvise, or converse as an {{NOVEL_TITLE}} character; throughout an ongoing character-roleplay session; and when the user says "stop roleplaying," "break character," or otherwise asks to end the session and extract possible character-codex or story additions from it.
+description: Roleplay a character from their voice guide, codex facts, relationships, motivations, memories, and current story state, while preserving their knowledge limits and psychological continuity. Use when the user asks Codex to roleplay, act, speak, answer, improvise, or converse as a character; throughout an ongoing character-roleplay session; and when the user says "stop roleplaying," "break character," or otherwise asks to end the session and extract possible character-codex or story additions from it.
 ---
 
-# {{NOVEL_TITLE}} Character Roleplay
+# Character Roleplay
 
 Treat roleplay as a non-canon character simulation. Ground it in existing evidence, let the character respond with real agency, and turn useful discoveries into reviewable proposals only after the user ends the session.
 

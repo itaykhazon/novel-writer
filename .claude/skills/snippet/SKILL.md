@@ -1,9 +1,9 @@
 ---
 name: snippet
-description: Generate a short random {{NOVEL_TITLE}} prose fragment or capture a user-supplied fragment, then save it as a clearly non-canon, indexed snippet note for possible later incorporation. Use when the user invokes /snippet or $snippet, asks for a random {{NOVEL_TITLE}} snippet, wants to park spare prose or dialogue, or says to save a fragment or scene idea for later.
+description: Generate a short random prose fragment or capture a user-supplied fragment, then save it as a clearly non-canon, indexed snippet note for possible later incorporation. Use when the user invokes /snippet or $snippet, asks for a random snippet, wants to park spare prose or dialogue, or says to save a fragment or scene idea for later.
 ---
 
-# Save an {{NOVEL_TITLE}} Snippet
+# Save a Snippet
 
 Create or capture one compact fragment and file it in the codex without treating it as manuscript canon.
 

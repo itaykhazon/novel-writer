@@ -6,7 +6,7 @@ description: A round-based interview technique for settling several related open
 # Grilling
 
 Adapted from Matt Pocock's `/grilling` primitive (github.com/mattpocock/skills) for
-{{NOVEL_TITLE}}'s planning skills. The problem it solves: a normal back-and-forth interview
+this novel's planning skills. The problem it solves: a normal back-and-forth interview
 asks one question, waits, asks the next — slow, and it re-asks things the
 answers already implied. Grilling asks a whole batch at once, then only asks
 what the last batch actually unlocked.
@@ -66,7 +66,7 @@ skill's call.
   architecture, for instance, isn't a grilling pass inside `add-chapter`).
 - A round asks *only* the frontier — resist bundling in a question that's
   merely related but not actually unblocked yet.
-- Keep suggestions specific to {{NOVEL_TITLE}} (genre, established mechanics, existing
+- Keep suggestions specific to this novel (genre, established mechanics, existing
   characters) — a generic suggestion is worse than no suggestion, because it
   invites a reflexive "sure, fine" that settles nothing real.
 - Grilling produces answers, not prose. Feed the settled answers back into the

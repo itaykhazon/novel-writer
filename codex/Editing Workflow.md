@@ -3,7 +3,7 @@ type: index
 tags: [editing, workflow, ai-orientation]
 ---
 
-# {{NOVEL_TITLE}} Editing Workflow
+# Editing Workflow
 
 ## Approval
 

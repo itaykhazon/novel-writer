@@ -1,9 +1,9 @@
 ---
 name: add-chapter
-description: Set up a new chapter in the {{NOVEL_TITLE}} novel manuscript — folder structure, chapter file with frontmatter, drafts/, a planned Summary.md and a beat-by-beat Outline.md — and update the arc index and codex status. This skill plans a chapter; it never writes chapter prose. Use when the user asks to add, set up, plan, or outline a new chapter for {{NOVEL_TITLE}}. To turn a finished outline into actual prose, use draft-chapter instead.
+description: Set up a new chapter in this novel manuscript — folder structure, chapter file with frontmatter, drafts/, a planned Summary.md and a beat-by-beat Outline.md — and update the arc index and codex status. This skill plans a chapter; it never writes chapter prose. Use when the user asks to add, set up, plan, or outline a new chapter for this novel. To turn a finished outline into actual prose, use draft-chapter instead.
 ---
 
-# Add an {{NOVEL_TITLE}} Chapter (planning only)
+# Add a Chapter (planning only)
 
 The vault is a local folder (this skill's working directory, or the folder
 the user points you at) — read and write its files directly.
@@ -41,7 +41,7 @@ for direction before outlining:
 2. `codex/plot/Macro Progression.md` — the global outline. Find where
    this chapter number sits in the phase sequence, and what that phase says has
    to happen. This is the primary source of direction when the user is vague.
-3. `codex/outline/Sanderson Method — {{NOVEL_TITLE}} Working Guide.md` — the project's
+3. `codex/outline/Sanderson Method — Working Guide.md` — the project's
    plotting diagnostic. Read it when planning every chapter, but put only the
    chapter-specific conclusions in `Outline.md`; do not copy the guide itself.
 4. The previous chapter's `Summary.md` (not the full chapter) for immediate
@@ -52,8 +52,8 @@ for direction before outlining:
    near a reveal.
 
 Then state, in one or two sentences to the user, the direction you derived and
-where it came from ("Phase Two says the formal the team assignment is still
-unwritten, and Ch6 left the Scout's scream unresolved — so this chapter is X").
+where it came from ("the macro outline says the formal assignment is still
+unwritten, and Ch6 left a question hanging — so this chapter is X").
 If the codex and macro outline genuinely don't point anywhere for this slot, ask
 the user rather than inventing a direction. If more than one or two related
 things are undecided at once (the chapter's purpose *and* its ending beat *and*
@@ -99,6 +99,7 @@ exist in the template unused). Fill in every field the template defines:
 - `status: outlined` — the pre-prose state. (If the template's own status
   comment doesn't list `outlined` as an option, that's the template lagging
   behind actual usage — `draft-chapter` flips this to `draft` later, and
+  `reconcile-chapter` corrects the rest of it against the finished prose, and
   every existing outlined-but-undrafted chapter already uses this value, so
   don't invent a different word for it.)
 
@@ -107,7 +108,7 @@ Then:
 ```markdown
 # Chapter <n> — <Title>
 
-*Not drafted yet. See [[Outline]] in this folder. Run `draft-chapter` to write it.*
+*Not drafted yet. See [[Outline]] in this folder. Run `draft-chapter` to write it, then `reconcile-chapter`.*
 ```
 
 Characters and locations come from the planned outline — use exact note
@@ -119,8 +120,17 @@ page, but a genuinely new named character or location is worth running
 
 ## 5. Write `Outline.md` — the real work
 
-This is what the user reviews. Make it specific enough that drafting is
-execution, not invention, and short enough to read in a minute.
+This is what the user reviews. It must settle **what has to be true by the end
+of the chapter** — and settle nothing about how any of it is worded.
+
+That distinction is the whole reason this skill exists separately from
+`draft-chapter`. An outline that writes its beats as finished sentences turns
+drafting into transcription and caps the chapter's prose at the quality of
+prose written under planning constraints, by someone thinking about structure,
+before anyone knew what the scene would feel like. So: name the event, the cost,
+and the reveal. Do not reach for the good phrasing — the good phrasing is
+`draft-chapter`'s job and it is found in the scene, not in the plan. Short
+enough to read in a minute is a feature here, not a length budget.
 
 ```yaml
 ---
@@ -151,6 +161,17 @@ Then:
   and, where it matters, *what it costs or reveals*. Include the intended
   chapter-ending note (cliffhanger, quiet beat, hard cut).
 
+- **Verbatim anchors** — an optional `## Verbatim anchors` section listing, one
+  per line, any wording that must land in the prose word-for-word: an oath, an
+  in-fiction system readout, a line of dialogue meant to recur exactly, the
+  established description of a planted object that has to match its first
+  appearance (see **Foreshadowed payoffs** above — those quoted descriptions
+  belong here too). Everything not listed here is expected to be written fresh
+  at the keyboard, and `chapter-cycle`'s `check_outline_overlap.py` reports
+  outline wording that reappears in the prose without being declared here.
+  Keep the list short: it is an exemption from a quality check, so every line
+  on it should be one you would defend as deliberately repeated.
+
   **Before assigning a beat number, check it forward, not just backward.** Read
   the *full* `codex/outline/Thread <X> — <Title>.md` file for every thread a
   beat touches — not only which beats earlier chapters already claimed, but
@@ -161,10 +182,10 @@ Then:
   already-planned chapter assumes, that's a real conflict — surface it to the
   user and resolve the thread's intended order before finishing this outline,
   rather than leaving two outlines that silently disagree about sequence for a
-  future audit to find. (This is exactly the failure mode the 2026-08-15
-  Story So Far audit found: Chapters 8–9 assigned B4/B5 while Chapters 10–13's
-  existing outlines and Arc 2's outline still treated B2/B3/B5 as happening in
-  the original order.)
+  future audit to find. (The failure mode, concretely: two chapters get
+  assigned B4/B5 while several later chapters' existing outlines still treat
+  B2/B3/B5 as happening in the original order. Nothing errors; the two plans
+  just quietly disagree until someone reads them side by side.)
 - **On the page for the first time** — any character, creature, location, or
   mechanic that debuts here, with a `[[link]]` and a flag if it has no codex
   entry yet.
@@ -183,10 +204,10 @@ Then:
   - **Larger payoff prepared:** [future result this sets up]
   - **POV want and value:** [immediate goal; value shaping the method]
   - **Try–fail / escalation:** [attempt, resistance, complication or cost, changed approach]
-  - **Existing element deepened:** [mechanic, culture, relationship, location, or System rule]
-  - **Resource and limitation budget:** [heat, ammunition, mass, injury, time, knowledge, authority]
+  - **Existing element deepened:** [mechanic, culture, relationship, location, or world rule]
+  - **Resource and limitation budget:** [whatever this story meters — supplies, energy, money, time, injury, knowledge, authority, standing]
   - **End-state change:** [what cannot be reset to the chapter's opening state]
-  - **LitRPG progression:** [level/rank/tier/debt/equipment/team mastery, or none intentionally]
+  - **Progression:** [rank/skill/equipment/mastery/debt change, if your story has a progression system — otherwise `not applicable`]
   ```
 
   A beat code is not itself reader-visible progress. Name the action,
@@ -224,7 +245,7 @@ status: planned
 ```
 
 Keep the `**Sets up:**` and `**Open thread:**` callouts — dense and factual, not
-evocative. `draft-chapter` rewrites this from the finished prose and drops
+evocative. `reconcile-chapter` rewrites this from the finished prose and drops
 `status: planned`.
 
 ## 7. Update the indexes
@@ -266,6 +287,7 @@ budget. Do not solve a weak outline by inventing an unseeded ability.
 
 Then finish. Report: the folder created, the direction you derived and its
 source, and any open questions. End by telling the user to review `Outline.md`
-and run `draft-chapter` when they're happy with it.
+and run `draft-chapter` when they're happy with it, followed by
+`reconcile-chapter` once there is prose on the page.
 
 Do not offer to "go ahead and write it now." The separation is the point.

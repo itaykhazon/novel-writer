@@ -1,10 +1,10 @@
 ---
 name: prose-review
 description: |
-  Review fiction prose for craft-level style issues — narrative distance/filter words, free indirect discourse (how deeply narration sits inside the POV character's voice), sentence and paragraph rhythm, sensory range, concrete grounding of unfamiliar worldbuilding, and over-explained emotion. This is a STYLE/VOICE pass, distinct from proofread (grammar/spelling/punctuation) and continuity-reviewer (facts/lore/timeline). Use whenever the user asks to review, critique, or tighten the prose/voice/POV of a chapter, asks "does this sound too distant/flat," wants a deep-POV or free-indirect-discourse pass, or wants feedback on pacing/rhythm at the sentence level. Also use proactively after drafting a new {{NOVEL_TITLE}} chapter, alongside proofread and continuity-reviewer, as part of the standard review pass — even if the user only says "review this chapter" without naming prose specifically.
+  Review fiction prose for craft-level style issues — narrative distance/filter words, free indirect discourse (how deeply narration sits inside the POV character's voice), sentence and paragraph rhythm, sensory range, concrete grounding of unfamiliar worldbuilding, and over-explained emotion. This is a STYLE/VOICE pass, distinct from proofread (grammar/spelling/punctuation) and continuity-reviewer (facts/lore/timeline). Use whenever the user asks to review, critique, or tighten the prose/voice/POV of a chapter, asks "does this sound too distant/flat," wants a deep-POV or free-indirect-discourse pass, or wants feedback on pacing/rhythm at the sentence level. Also use proactively after drafting a new chapter, alongside proofread and continuity-reviewer, as part of the standard review pass — even if the user only says "review this chapter" without naming prose specifically.
 ---
 
-# Prose Review for {{NOVEL_TITLE}}
+# Prose Review
 
 This skill reviews prose craft — not grammar, not continuity, but the level between them: how close the narration sits to the POV character (or narrator), how the sentences and paragraphs move, and whether the voice matches the target style. It outputs a markdown report the writer can work through like a punch list.
 
@@ -69,10 +69,10 @@ The manuscript already does this well in places (the Ch. 1 zero-g silence passag
 
 **4. Direct emotion-naming with zero physical/behavioral accompaniment** (e.g., "he was scared" with nothing else). The manuscript is already good about pairing emotion with somatic detail — only flag the bare cases.
 
-**6. In-fiction system/UI/HUD readout text** (`IMPACT DETECTED`, stat blocks, etc.) — **only applies if your novel uses this convention at all; see `codex/Writing Style.md`.** Where it applies, it's a strength (hard-tech or magic-system grounding, rendered as part of the story's voice), not a problem — never flag its mere presence as an issue; only note opportunities for more personality in how the POV character reacts to/argues with it. If your novel has no such convention, ignore this rule entirely.
+**6. In-fiction system/UI/readout text** (a stat panel, a HUD line, an in-world document block, etc.) — **only applies if your novel uses this convention at all; see `codex/Writing Style.md`.** Where it applies, it's a strength (hard-tech or magic-system grounding, rendered as part of the story's voice), not a problem — never flag its mere presence as an issue; only note opportunities for more personality in how the POV character reacts to/argues with it. If your novel has no such convention, ignore this rule entirely.
 
 **8. POV discipline** — no head-hopping, no narrator knowledge the POV character doesn't have. Cheap to verify, should be a hard stop if it happens, but don't expect to find it often; continuity-reviewer also checks POV consistency, so don't duplicate its findings, just flag if you see it. Note in the finding that this is structural rather than a line-level fix (see Output Format below).
-- When the fix is a genuine POV shift (not a mistake but an intentional dual-POV structure, as with Alex/Riley), prefer retiming the shift to land on a natural beat change (a new threat, a new scene) over rewriting the transition sentence in place — pair it with the manuscript's existing scene-break marker (`—`) rather than inventing a new convention. Whatever text ends up as the first line of the new POV's scene must still satisfy rule 12 (opens on the POV character's name) — check that explicitly, since retiming/inserting a break often relocates a line that used to be mid-scene into the opening-line position.
+- When the fix is a genuine POV shift (not a mistake but an intentional dual-POV structure), prefer retiming the shift to land on a natural beat change (a new threat, a new scene) over rewriting the transition sentence in place — pair it with the manuscript's existing scene-break marker (`—`) rather than inventing a new convention. Whatever text ends up as the first line of the new POV's scene must still satisfy rule 12 (opens on the POV character's name) — check that explicitly, since retiming/inserting a break often relocates a line that used to be mid-scene into the opening-line position.
 
 **10. Dialogue tag economy** — tags should stay plain (*said, asked, admitted*) rather than "hissed/quipped/exclaimed." Only flag if an unusual tag actually appears; the manuscript is already correct here.
 
@@ -81,7 +81,7 @@ The manuscript already does this well in places (the Ch. 1 zero-g silence passag
 **12. Chapters and scenes open with the POV character's name.**
 **Only applies if `codex/Writing Style.md` declares this house rule for your novel — many novels don't use it, and it doesn't apply at all to a single-POV first-person novel where every scene is already "in" the same narrator.** Where it does apply, it's a firm house-style rule, not a craft judgment call: the first word (or opening clause) of every chapter, and of every new scene within it (i.e. right after a scene-break marker, whatever your novel's actual convention is), must be the POV character's name. It grounds the reader in whose head they're in immediately, especially important right after a scene break where the POV may have just shifted. If your novel has no such rule, skip this one.
 - Check this mechanically: read the first line after the chapter's opening frontmatter/date-stamp, and the first line after every scene-break marker. If it doesn't open on the POV character's name, flag it — regardless of whether the sentence is otherwise well-written.
-- When flagging alongside another fix (e.g. a rule 1 filter-word fix that would naturally displace the name — "Alex heard the grinding before he saw it" → cutting "Alex heard" as the filter fix), the replacement must still open on the name. Solve the underlying issue without losing the naming convention as a side effect (e.g. "Alex's suit picked up the grinding before he found its source" keeps "Alex" first while still cutting the filter construction).
+- When flagging alongside another fix (e.g. a rule 1 filter-word fix that would naturally displace the name — "Vess heard the grinding before she saw it" → cutting "Vess heard" as the filter fix), the replacement must still open on the name. Solve the underlying issue without losing the naming convention as a side effect (e.g. "Vess's lamp found the grinding before she did" keeps "Vess" first while still cutting the filter construction). The names here are placeholders for whoever your POV character actually is.
 - This rule interacts directly with rule 8 (POV discipline/shifts) — see that rule's note below.
 
 ## Workflow
@@ -166,7 +166,7 @@ Two kinds of findings need two different treatments:
 
 ---
 
-*Prose review completed for {{NOVEL_TITLE}} novel.*
+*Prose review completed for this novel.*
 ```
 
 ## Applied-status tracking
@@ -177,7 +177,7 @@ Two kinds of findings need two different treatments:
 
 - **This is a style pass, not a correctness pass.** Every finding should be arguable, not a rule violation — phrase the "Why" as "consider" or "this could," not "this is wrong." The Original/Replacement text itself should still be exact and directly usable, even though the underlying judgment is a suggestion.
 - **Confidence tier governs how hard to push, not whether to flag, and not whether it gets an exact fix.** A LOW-confidence rule that's genuinely violated still gets flagged, and still gets an exact Original/Replacement (or the structural worked-example treatment) — it just gets a lighter touch in the "Why."
-- **Rewrites must sound like Alex (or the scene's actual POV character), not like generic "better prose."** A rewrite that fixes the filter word but reads like a different author's voice has failed rule 2 while fixing rule 1.
+- **Rewrites must sound like the scene's actual POV character, not like generic "better prose."** A rewrite that fixes the filter word but reads like a different author's voice has failed rule 2 while fixing rule 1.
 - **Ground rewrites in the POV character's specific vocabulary and worldview, not generic literary imagery.** If a character's established voice notes (`<Name> - Voice.md`) show them thinking in a particular register — mechanical/technical, legalistic, folksy, clinical, whatever's actually established — a rewrite that reaches for a mismatched comparison instead of that working vocabulary is off-voice even if it's well-written on its own terms. Match the register the voice note actually establishes rather than defaulting to a "literary" tone.
 - **Favor a rewrite that pulls double duty over one that only fixes the flagged problem.** A line that fixes the filter word *and* sharpens character voice, or a beat that fixes a rhythm issue *and* reveals something, beats a rewrite that's merely correct — a single element doing two jobs (plot and character, action and voice) reads as tighter than either job done alone. Don't force it: a clean single-purpose fix beats a contrived one chasing a second function that isn't actually there.
 - **When applying multiple house rules to the same passage, satisfy all of them, not just the one you started with.** A rule 1 (filter word) fix that ends up displacing the POV character's name from the opening position also breaks rule 12; a rule 8 (POV shift) fix that solves the transition but starts the new scene on the wrong word breaks rule 12 too. Re-check the edited passage against the other HIGH rules before finalizing a finding.

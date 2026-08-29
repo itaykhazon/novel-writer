@@ -1,6 +1,6 @@
 ---
 name: continuity-reviewer
-description: Check a manuscript chapter against the {{NOVEL_TITLE}} codex for continuity errors, including character traits, locations, timelines, plot threads, lore, any stat/progression-system rules, resource budgets, and whether climactic solutions obey established capabilities, limitations, and costs. Use when reviewing or revising a chapter, proofreading for continuity, checking lore consistency, verifying character or item state, ensuring plot beats resolve in order, checking timeline logic, or testing whether a mechanical payoff is earned.
+description: Check a manuscript chapter against the codex for continuity errors, including character traits, locations, timelines, plot threads, lore, any stat/progression-system rules, resource budgets, and whether climactic solutions obey established capabilities, limitations, and costs. Use when reviewing or revising a chapter, proofreading for continuity, checking lore consistency, verifying character or item state, ensuring plot beats resolve in order, checking timeline logic, or testing whether a mechanical payoff is earned.
 ---
 
 # Continuity Reviewer for Story Codex
@@ -18,9 +18,9 @@ You'll need:
 
 ### Beat Advancement (NEW - Primary Check)
 
-Your {{NOVEL_TITLE}} manuscript is driven by five plot threads (A–E, labeled in the outline) with numbered beats that each chapter must advance. The skill now verifies:
+If your outline labels plot threads with numbered beats that each chapter must advance, the skill verifies:
 
-- **Beat presence**: Does the chapter actually show the beats it's supposed to? If Chapter 7 should advance A4 (responsibility), does Alex make a decision he owns?
+- **Beat presence**: Does the chapter actually show the beats it's supposed to? If Chapter 7 should advance A4 (responsibility), does the POV character make a decision they own?
 - **Beat ordering**: Are discoveries happening in the right sequence? (C1 before C2 before C3?)
 - **Deferred beats**: If a beat was assigned but didn't land, is it intentionally deferred to a later chapter? (Flag as note, not error)
 - **Timeline fit**: Does the chapter's estimated-duration allow time for the beats to develop? (Example: "Thread D beat D6 requires overnight trust-building, but chapter is only 2 hours" → WARNING)
@@ -29,7 +29,7 @@ Your {{NOVEL_TITLE}} manuscript is driven by five plot threads (A–E, labeled i
 
 ### Character Consistency
 - **Traits & appearance**: Hair color, scars, disabilities, physical state — flagged if a chapter contradicts earlier description
-- **Squad assignments**: Team membership and role (e.g., "Alex is part of the team") — flagged if contradicted
+- **Group membership**: Which crew, party, household, unit or faction a character belongs to and their role in it — flagged if contradicted
 - **Backstory & knowledge**: What each character knows/has learned — flagged if a character acts on information before learning it
 - **Abilities & equipment**: Special gear, powers, skill levels — flagged if used before acquisition or contradicts established state
 - **Status**: Injured, dead, missing, unconscious — flagged if status changes without narrative explanation
@@ -42,19 +42,19 @@ Your {{NOVEL_TITLE}} manuscript is driven by five plot threads (A–E, labeled i
 - **Access**: Can characters access a locked location? Do they have the key/password?
 
 ### Items, Props & Recurring Objects
-- **Physical description**: Color, material, texture, size, distinguishing marks on any recurring non-character, non-location object — a weapon, an artifact, a fragment, a tool, a vehicle — flagged if the same object is described differently across mentions with no in-story reason (an item that's "metallic" when introduced and "gold" three chapters later, with nothing on the page explaining the change, is exactly this category).
+- **Physical description**: Color, material, texture, size, distinguishing marks on any recurring non-character, non-location object — a weapon, an heirloom, a tool, a vehicle, a document — flagged if the same object is described differently across mentions with no in-story reason (an item that's "brass" when introduced and "bronze" three chapters later, with nothing on the page explaining the change, is exactly this category).
 - **Check across every mention in the manuscript itself, not just the codex's summary of it.** A codex "Confirmed on the page" bullet is a compressed record, not the ground truth — always trace back to the actual chapter text for each cited chapter before confirming a match.
-- **Compound descriptors are a red flag, not a resolution.** If a codex entry describes a recurring item with a slash-joined pair of terms (e.g. "gold/metallic fragment," "red/gold crystal") — treat that as a sign the underlying chapters may use inconsistent language, not as evidence they already agree. Open the cited chapters and check whether the manuscript text itself actually uses matching description, not just whether the codex's paraphrase covers both.
+- **Compound descriptors are a red flag, not a resolution.** If a codex entry describes a recurring item with a slash-joined pair of terms (e.g. "brass/bronze compass," "grey/green cloak") — treat that as a sign the underlying chapters may use inconsistent language, not as evidence they already agree. Open the cited chapters and check whether the manuscript text itself actually uses matching description, not just whether the codex's paraphrase covers both.
 - **State changes**: Is the item damaged, consumed, transformed, lost, upgraded, or moved to a new owner — flagged if it's used in a state the manuscript hasn't shown it reaching yet.
 - **Ownership & location**: Who's holding it and where it physically is — flagged if it's used from the wrong hands or the wrong place without an on-page transfer.
 
 ### Cross-Artifact Fact Consistency (NEW)
 
-Every chapter has at least three artifacts that can independently claim the same fact: the manuscript prose, that chapter's `Summary.md`, and any codex page (usually under `systems-mechanics/`) that documents the mechanic or item involved. These are supposed to agree because `Summary.md` is meant to be *derived from* the final prose — but revision rounds routinely change a detail in the prose (a percentage, a magazine count, a rank tag, where on a creature's body something landed) without anyone going back to update the Summary or the codex page that was written from an earlier draft. When that happens, the Summary and codex still agree with *each other* — because both trace back to the same stale draft — which makes the pair look like confirmation instead of the drift it actually is. This is the same trap as the compound-descriptor case above, one level up: two sources agreeing is not evidence they're both right if they share a common (outdated) origin.
+Every chapter has at least three artifacts that can independently claim the same fact: the manuscript prose, that chapter's `Summary.md`, and any codex page (usually under `systems-mechanics/`) that documents the mechanic or item involved. These are supposed to agree because `Summary.md` is meant to be *derived from* the final prose — but revision rounds routinely change a detail in the prose (a percentage, a supply count, a rank tag, where on a body something landed) without anyone going back to update the Summary or the codex page that was written from an earlier draft. When that happens, the Summary and codex still agree with *each other* — because both trace back to the same stale draft — which makes the pair look like confirmation instead of the drift it actually is. This is the same trap as the compound-descriptor case above, one level up: two sources agreeing is not evidence they're both right if they share a common (outdated) origin.
 
 **Check every fact of this shape against the actual final prose, not against the Summary or the codex first:**
-- Any percentage or numeric readout (thermal reserve, stat values, damage numbers)
-- Counts (magazines/rounds remaining, enemies present, fragments deployed, days elapsed)
+- Any percentage or numeric readout (a device's remaining charge, a stat value, a damage number)
+- Counts (supplies or ammunition remaining, opponents present, days elapsed)
 - Rank, level, or classification tags (`Level 3, Uncommon` vs. `Level 3, Common`)
 - Physical placement or location of an effect, wound, or item (which limb, which side, which body part)
 - Which hand/side/arm a piece of equipment is used from
@@ -84,11 +84,11 @@ problem, verify all four conditions:
 2. **Possession and state:** The character has the required equipment,
    knowledge, position, injury capacity, and current resource at that exact
    moment.
-3. **Limitation and cost:** Heat, ammunition, mass, time, reagent, physical
+3. **Limitation and cost:** Fuel or charge, supplies, mass, time, reagent, physical
    strain, risk, authority, or another documented constraint remains active.
    Do not let a climax quietly waive the rule that made the power interesting.
 4. **Expansion rather than rescue:** The solution recombines or deepens an
-   established element. If it adds a new mineral, mode, upgrade, System rule,
+   established element. If it adds a new material, mode, upgrade, world rule,
    or exception, confirm it was introduced before the payoff and did not exist
    only to unlock this obstacle.
 
@@ -105,29 +105,31 @@ stage as another claim subordinate to the final prose.
 
 ## What you'll get back
 
-A structured report with issues organized by severity and type:
+A structured report with issues organized by severity and type. The example
+below uses a placeholder cast and mechanic — it shows the *shape* of a report,
+not anything about your novel:
 
 ```
 BEAT ADVANCEMENT
-✓ A4 — Alex demonstrates responsibility in route decision
-✓ B1 — Squad shows mutual respect under pressure
-⚠ C3 — Enemies shown fleeing, but didn't explicitly show "enemies stay dead" behavior
-✓ E1 — Sam joins the group without asking permission
+✓ A4 — Vess demonstrates responsibility in the route decision
+✓ B1 — the party shows mutual respect under pressure
+⚠ C3 — pursuers shown breaking off, but didn't explicitly show the "they do not return" rule
+✓ E1 — Corin joins the group without asking permission
 
 CRITICAL (stop the presses)
-- Character trait mismatch: Alex's arm state
-  Line 242: "Alex flexed both arms" contradicts 00 Index: Alex lost his right arm in Ch 3
+- Character trait mismatch: Vess's hand
+  Line 242: "Vess flexed both hands" contradicts 00 Index: Vess lost her left hand in Ch 3
 
 WARNING (fix before publishing)
 - Timeline issue: Travel time implausible
-  Lines 105-110: Character travels 500 km in described time — conflicts with established ship speed
+  Lines 105-110: Character travels 500 km in described time — conflicts with the established travel speed
 - Beat timing issue: Thread D beat D6 requires overnight bonding, but chapter estimated-duration is 2 hours
-- Item description drift: fragment described as "metallic" in Ch 4 and Ch 6, but "gold" in this chapter with no on-page explanation — codex smooths this over as "gold/metallic," which is not itself confirmation the chapters agree
-- Cross-artifact fact mismatch: this chapter's prose shows THERMAL RESERVE readouts of 18% / 30% / 17%, but the chapter's own Summary.md and the suit mechanics codex both cite 14% / 26% / 4% / 17% — the Summary and codex agree with each other but not with the actual page
+- Item description drift: the compass described as "brass" in Ch 4 and Ch 6, but "bronze" in this chapter with no on-page explanation — codex smooths this over as "brass/bronze," which is not itself confirmation the chapters agree
+- Cross-artifact fact mismatch: this chapter's prose shows CHARGE readouts of 18% / 30% / 17%, but the chapter's own Summary.md and the mechanic's codex page both cite 14% / 26% / 4% / 17% — the Summary and codex agree with each other but not with the actual page
 
 NOTE (consider for polish)
 - Open thread status
-  Ch 5 opened: "What triggered the Scout's scream?" — left unresolved through Ch 6 (intentional? flag for next chapter)
+  Ch 5 opened: "What did the watcher on the ridge signal?" — left unresolved through Ch 6 (intentional? flag for next chapter)
 - Deferred beat: A5 assigned but deferred to Chapter 9 (noted in Summary)
 ```
 
@@ -158,17 +160,17 @@ usable by `draft-from-review`:
 
 ## Beat Advancement
 
-✓ A4 — Alex demonstrates responsibility in route decision
-⚠ C3 — Enemies shown fleeing, but didn't explicitly show "enemies stay dead" behavior
+✓ A4 — Vess demonstrates responsibility in the route decision
+⚠ C3 — pursuers shown breaking off, but didn't explicitly show the "they do not return" rule
 
 ## Issues
 
-### [CRITICAL] Character trait mismatch — Alex's arm state
+### [CRITICAL] Character trait mismatch — Vess's hand
 **Location:** Line 242
-**Codex source:** `codex/characters/Alex.md` — Alex lost his right arm in Ch 3
+**Codex source:** `codex/characters/Vess.md` — Vess lost her left hand in Ch 3
 
 **Original:**
-> Alex flexed both arms.
+> Vess flexed both hands.
 
 **Fix:** one of the two forms below, depending on what the issue actually needs:
 - **Replacement** (use when the fix is a direct text swap — a description, a stat, a name, a line of dialogue that contradicts the codex):
@@ -187,7 +189,7 @@ in the same issue rather than only citing one — that's what lets
 the prose and leaving the Summary or codex silently wrong.
 
 Give every issue an exact **Original** quote from the chapter text. Never
-leave a finding as a bare description ("Alex's arm state is
+leave a finding as a bare description ("Vess's hand is
 inconsistent") without also giving the exact contradicting text and one of
 the two Fix forms above — that's what makes the report something
 `draft-from-review` (or the writer) can act on directly rather than having
@@ -234,7 +236,7 @@ useful on a large codex.
 - **Check the codex for gaps**: If your codex is missing a character or location document, the skill will note that it can't verify certain details. Use the `add-to-codex` skill to fill gaps.
 - **Review context**: Read the codex source the skill cites — sometimes "contradictions" are actually valid plot developments the codex hasn't caught up to yet.
 - **Use continuity-reviewer after drafting, and again after any round of applied fixes**: Run this skill on every new chapter before calling it done — and re-run it (or at least the Cross-Artifact Fact Consistency check) after `draft-from-review` applies edits, since that's exactly when a prose fix and its Summary/codex counterpart are most likely to drift apart. It's your final structural check, not just a one-time gate.
-- **Audit for compound descriptors**: Periodically grep the `codex/` folder for slash-joined pairs ("X/Y fragment," "X/Y crystal," etc.) in "Confirmed on the page" or similar bullets. Each one is a candidate cross-chapter description mismatch that was smoothed over instead of resolved — worth a quick check against the cited chapters even outside a full review pass.
+- **Audit for compound descriptors**: Periodically grep the `codex/` folder for slash-joined pairs ("X/Y compass," "X/Y cloak," etc.) in "Confirmed on the page" or similar bullets. Each one is a candidate cross-chapter description mismatch that was smoothed over instead of resolved — worth a quick check against the cited chapters even outside a full review pass.
 - **This skill is scoped to one chapter on purpose, for cost reasons — it will not catch cross-chapter/whole-vault problems.** Beat-order contradictions between Thread files and already-outlined *future* chapters, Phase/status metadata drifting out of sync across `00 Index.md` and the outline files, and backlink orphans are all real categories of continuity problem, but they live outside any single chapter's bundle. Don't try to make this skill catch them by feeding it the whole vault — that reintroduces the cost problem `review-loop.md` measured. Instead, run a separate whole-vault audit periodically (every arc boundary, or every 3–4 chapters) — see `codex-structure` / project notes for the cadence, and `scripts/audit_links.py --orphans` in `chapter-cycle` for the mechanical half of it.
 
 ## Edge cases

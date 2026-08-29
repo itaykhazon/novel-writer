@@ -2,8 +2,8 @@
 """Apply exact-match diffs to a chapter file. Refuses to guess.
 
 Rewriting a whole chapter to land a handful of review fixes is both wasteful and
-a reliable source of regressions — on Chapter 7, three already-fixed problems
-came back inside rewritten material. This applies edits as anchored
+a reliable source of regressions — in the run this was built for, three
+already-fixed problems came back inside rewritten material. This applies edits as anchored
 replacements, and fails loudly rather than silently doing the wrong one.
 
 Patch format (repeat the block as many times as needed):

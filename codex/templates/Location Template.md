@@ -1,6 +1,6 @@
 ---
 type: location
-world-kind: <fill in the categories relevant to your world, e.g. ship | city | dungeon | homeworld>
+world-kind: <fill in the categories relevant to your world, e.g. city | building | region | vessel | wilderness>
 persistent: true | false | unconfirmed
 first-appearance: "[[Chapter X]]"
 tags: [location]
