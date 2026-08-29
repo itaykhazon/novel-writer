@@ -12,7 +12,7 @@ Review the surface prose for model-shaped repetition and replace generic machine
 
 1. Read the supplied text in full before flagging anything.
 2. Read `references/pattern-catalog.md` before reviewing; it contains the calibrated phrase families, thresholds, and research basis.
-3. For an {{NOVEL_TITLE}} chapter, read `codex/Writing Style.md` and the POV character's voice guide before drafting replacements.
+3. For a chapter, read `codex/Writing Style.md` and the POV character's voice guide before drafting replacements.
 4. When the source is a local file of roughly 500 words or more, run:
 
    ```text
@@ -80,10 +80,10 @@ Apply the catalog, grouped into these report categories:
 6. Draft an exact replacement in the actual POV character's diction. Preserve plot facts, blocking, formatting, and intentional rhythm.
 7. Do a false-positive pass. Explicitly clear conspicuous scanner hits that are earned, voice-specific, literal, or isolated before assigning severity.
 8. Order findings HIGH → MEDIUM → LOW, then by appearance within each tier.
-9. If the source is an {{NOVEL_TITLE}} chapter, save one report per chapter in the top-level `reviews/` folder as `<Chapter Name> - anti-ai-prose-review-<YYYY-MM-DD>.md`. Do not edit manuscript prose and do not save reports in chapter `drafts/` folders.
+9. If the source is a chapter, save one report per chapter in the top-level `reviews/` folder as `<Chapter Name> - anti-ai-prose-review-<YYYY-MM-DD>.md`. Do not edit manuscript prose and do not save reports in chapter `drafts/` folders.
 10. If the user supplied an unnamed pasted passage, return the report in the response unless they asked for a file. Do not invent a chapter name.
 11. Close with 1–3 exact examples that already sound specific and resistant to generic model cadence: surprising detail, asymmetric rhythm, real subtext, or unmistakable character voice.
-12. Use the {{NOVEL_TITLE}}-specific footer only for {{NOVEL_TITLE}} material. For unnamed or unrelated prose, use the generic footer shown below.
+12. Use the project-specific footer only for this novel's material. For unnamed or unrelated prose, use the generic footer shown below.
 
 ## Replacement rules
 
@@ -165,7 +165,7 @@ This label describes revision need, not authorship or an AI probability.
 *Anti-AI prose review completed. This is a style review, not an authorship determination.*
 ```
 
-For an {{NOVEL_TITLE}} chapter, change the footer to: `*Anti-AI prose review completed for {{NOVEL_TITLE}} novel. This is a style review, not an authorship determination.*`
+For a chapter, change the footer to: `*Anti-AI prose review completed for this novel. This is a style review, not an authorship determination.*`
 
 ## Applied-status tracking
 

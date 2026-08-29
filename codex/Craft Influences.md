@@ -28,7 +28,7 @@ Fill this in by hand, or run `populate-project`, which interviews you for your c
 
 <fill in>
 
-## Synthesis — what this means for {{NOVEL_TITLE}}
+## Synthesis — what this means for this novel
 
 <fill in — a short paragraph reconciling the comps above into one working target. If they disagree (one lingers, one moves fast), say so explicitly and describe how this novel splits the difference or leans one way for a reason — that reasoning is exactly what `prose-review` and `pacing-review` use to judge whether a slow or fast passage is earning its pace, rather than defaulting to "faster is always better.">
 

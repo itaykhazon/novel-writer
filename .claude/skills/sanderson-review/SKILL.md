@@ -1,7 +1,7 @@
 ---
 name: sanderson-review
 description: >-
-  Review an {{NOVEL_TITLE}} chapter, chapter outline, arc plan, plot thread, or whole-book architecture using the project's Brandon Sanderson framework: promise-progress-payoff, functional beats, try-fail escalation, proactive/relatable/capable characters, motivation/personality/values, worldbuilding depth, mechanic limitations, and LitRPG progression. Use when asked for a Sanderson review, plot-architecture audit, promise/payoff check, outline diagnosis before drafting, arc-level structural review, scene-progression analysis, payoff/setup check, or whether a planned climax is earned. Produce a report only; never edit manuscript, outline, or codex source files.
+  Review a chapter, chapter outline, arc plan, plot thread, or whole-book architecture using the project's Brandon Sanderson framework: promise-progress-payoff, functional beats, try-fail escalation, proactive/relatable/capable characters, motivation/personality/values, worldbuilding depth, mechanic limitations, and progression. Use when asked for a Sanderson review, plot-architecture audit, promise/payoff check, outline diagnosis before drafting, arc-level structural review, scene-progression analysis, payoff/setup check, or whether a planned climax is earned. Produce a report only; never edit manuscript, outline, or codex source files.
 ---
 
 # Sanderson Review
@@ -19,7 +19,7 @@ Read `references/literature-examples.md` only when a material finding would
 genuinely benefit from a published craft comparison. If you open it, read it
 completely and follow its attribution rules. A review does not need an analogy.
 
-Read `codex/outline/Sanderson Method — {{NOVEL_TITLE}} Working Guide.md` completely. It is the project-specific application of the course framework.
+Read `codex/outline/Sanderson Method — Working Guide.md` completely. It is the project-specific application of the course framework.
 
 ## Scope and authority
 
@@ -72,7 +72,7 @@ Before judging scenes, write a private one-paragraph statement of:
 - the small payoff expected inside this chapter;
 - the larger payoff it prepares.
 
-Separate explicit outline requirements from your interpretation. Include tone, external plot, internal change, relationship, mystery, and LitRPG/progression promises when relevant.
+Separate explicit outline requirements from your interpretation. Include tone, external plot, internal change, relationship, mystery, and progression promises when relevant.
 
 ### 2. Read the complete scope
 
@@ -150,7 +150,7 @@ For every solution or reveal, verify:
 - the payoff uses the chapter's or book's thematic core;
 - no new capability appears only when needed.
 
-Trace important resources and limitations from opening state through gains, spends, damage, and closing state. Apply this to heat, ammunition, mass, injury, information, social leverage, skills, levels, and other story-specific currencies.
+Trace important resources and limitations from opening state through gains, spends, damage, and closing state. Apply this to whatever your story actually meters — energy or supplies, injury and stamina, time, money, information, social leverage, reputation, skills or ranks, and any other story-specific currency.
 
 ### 7. Test worldbuilding and progression
 
@@ -161,7 +161,7 @@ Check whether plot, character, and setting solve one another instead of running 
 - teach limitations, costs, and reader-visible behavior before a mechanic solves a major problem;
 - ground unfamiliar abstractions in a concrete POV need, action, comparison, or consequence;
 - reveal only the portion of the iceberg the current story needs;
-- ensure LitRPG progression changes tactics, options, identity, pressure, or cost rather than merely increasing numbers.
+- if your story has a progression or power system, ensure advancement changes tactics, options, identity, pressure, or cost rather than merely increasing numbers.
 
 ### 8. Test opposition and choice
 
@@ -192,7 +192,7 @@ Do not produce a finding solely to use a literary example.
 Choose from `references/literature-examples.md` by craft function, not prestige or surface similarity.
 
 - Write `Comparable craft move:` followed by the title, author, spoiler scope, and a concise paraphrase.
-- Explain the structural similarity and the actionable difference for {{NOVEL_TITLE}}.
+- Explain the structural similarity and the actionable difference for this novel.
 - Never write as Sanderson, say “I did this,” invent author commentary, or imply personal access to the author.
 - Paraphrase by default. Do not quote novels. Quote an official lecture or author annotation only when necessary, link it, and keep the quotation under 15 words.
 - Mark spoilers before the example.

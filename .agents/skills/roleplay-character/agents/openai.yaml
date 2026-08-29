@@ -1,4 +1,4 @@
 interface:
-  display_name: "{{NOVEL_TITLE}} Character Roleplay"
-  short_description: "Roleplay {{NOVEL_TITLE}} characters with canon fidelity"
-  default_prompt: "Use $roleplay-character to roleplay as Alex until I say stop roleplaying."
+  display_name: "Character Roleplay"
+  short_description: "Roleplay characters with canon fidelity"
+  default_prompt: "Use $roleplay-character to roleplay as one of this novel's characters until I say stop roleplaying."

@@ -26,7 +26,7 @@ A promise is a reader expectation created by emphasis, framing, repetition, genr
 | Story | What eventual event, answer, confrontation, or change is being implied? |
 | Character | What does the character want, fear, hide, or need to become? |
 | Conflict | What prevents the desired outcome, and why will it not be easy? |
-| Structure/genre | What familiar reading contract—mystery, progression, romance, heist, dungeon loop—is invoked? |
+| Structure/genre | What familiar reading contract—mystery, progression, romance, heist, quest—is invoked? |
 | Mechanic | Which tool, limitation, resource, clue, or rule is being taught for later use? |
 
 ### Promise failures
@@ -176,7 +176,7 @@ For mystery progress, substitute **hypothesis → contradiction → revised hypo
 
 ## 7. Earned mechanics and reveals
 
-Apply Sanderson's magic-system diagnostics to technology, LitRPG rules, politics, clues, and character skills:
+Apply Sanderson's magic-system diagnostics to whatever your book runs on — magic, technology, a progression or ranking system, politics, clues, or character skills:
 
 - A tool may solve in proportion to reader understanding.
 - Limitations, weaknesses, and costs must remain active.
@@ -203,7 +203,7 @@ A planned arc needs movement in at least one relevant state: desire, belief, rel
 - A major mechanic should affect plot options, character choices, and the lived setting.
 - Ground unfamiliar abstractions in a concrete POV need, action, comparison, or consequence before layering terminology.
 - Reveal the portion of the iceberg required for the current decision; codex depth is not a mandate to explain it all.
-- LitRPG progression should change tactics, identity, pressure, options, or costs. A number rising without a changed decision is weak progress.
+- Progression, where a story has it, should change tactics, identity, pressure, options, or costs. A number rising without a changed decision is weak progress.
 
 ## 10. Severity thresholds
 

@@ -1,6 +1,6 @@
 ---
 name: target-audience-readthrough
-description: Simulate an honest, opinionated cold read of an {{NOVEL_TITLE}} chapter, arc, or the entire drafted story by one plausible genre-literate reader in this novel's actual target audience (see references/audience-model.md — genre-specific, fill in via populate-project or by hand). Use when the user asks for a target-audience readthrough, reader reaction, beta-reader opinion, engagement map, keep-reading or DNF assessment, or which segments were thrilling, boring, overlong, repetitive, underdeveloped, or a slog. Read only the requested manuscript prose and never use the codex, outlines, summaries, reviews, changelogs, frontmatter, author explanations, or other privileged context.
+description: Simulate an honest, opinionated cold read of a chapter, arc, or the entire drafted story by one plausible genre-literate reader in this novel's actual target audience (see references/audience-model.md — genre-specific, fill in via populate-project or by hand). Use when the user asks for a target-audience readthrough, reader reaction, beta-reader opinion, engagement map, keep-reading or DNF assessment, or which segments were thrilling, boring, overlong, repetitive, underdeveloped, or a slog. Read only the requested manuscript prose and never use the codex, outlines, summaries, reviews, changelogs, frontmatter, author explanations, or other privileged context.
 ---
 
 # Target-Audience Readthrough
@@ -106,7 +106,7 @@ After finishing, revisit only the target prose to locate brief supporting passag
 - Do not claim to speak for all readers. Separate a personal preference from a likely audience-fit issue.
 - Distinguish a **pull-forward question** from **blocking confusion**. Mystery creates desire to learn more; blocking confusion prevents the reader from understanding the present action, goal, or consequence.
 - Distinguish deliberate breathing room from boredom by asking whether the slower material deepened character, atmosphere, stakes, or anticipation.
-- If your novel has LitRPG-style stat/progression elements, judge them by whether progression is legible, consequential, and earned—not by the sheer quantity of numbers or alerts. Skip this bullet entirely if your novel has no such system.
+- If your novel has stat or progression elements, judge them by whether progression is legible, consequential, and earned—not by the sheer quantity of numbers or alerts. Skip this bullet entirely if your novel has no such system.
 - Judge dark humor by whether it arises from character or situation and whether the scene retains emotional consequences after the laugh.
 - Call out cheesiness by name when it happens: a line, beat, or emotional turn that reads as melodramatic, corny, or try-hard rather than earned — whether it's a serious moment overplaying its hand or a joke landing flat. Say so as plainly as any other reaction, in the segment where it happened; don't soften it into "the emotional beat didn't quite land."
 - Never infer author intent. Describe the experience that reached the page.
@@ -120,7 +120,7 @@ Use `<Scope Name> - target-audience-readthrough-<YYYY-MM-DD>.md`, for example:
 
 - `Chapter 8 - The Last Gate - target-audience-readthrough-2026-08-15.md`
 - `Arc 1 - target-audience-readthrough-2026-08-15.md`
-- `{{NOVEL_TITLE}} - target-audience-readthrough-2026-08-15.md`
+- `<Novel Title> - target-audience-readthrough-2026-08-15.md`
 
 Keep an arc or whole-story experience in one report; do not split it into chapter reports. If the filename already exists, append `-2`, `-3`, and so on rather than overwrite it.
 

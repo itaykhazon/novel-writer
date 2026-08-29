@@ -29,6 +29,7 @@ actually looked into what that author's prose *does*, not just named it.
 
 **Writes only to reference/data files:**
 
+- `codex/project.json`
 - `codex/Genre.md`
 - `codex/Writing Style.md`
 - `codex/Craft Influences.md`
@@ -37,6 +38,8 @@ actually looked into what that author's prose *does*, not just named it.
 - `.agents/skills/target-audience-readthrough/references/audience-model.md`
   **and** its mirror
   `.claude/skills/target-audience-readthrough/references/audience-model.md`
+  — this one matters most: unfilled, it simulates a reader calibrated to
+  nobody, which is worse than not running that skill at all
 - Optionally, with the author's explicit go-ahead (see Step 5),
   `codex/00 Braindump.md`
 
@@ -79,7 +82,7 @@ asking the first round:
   Step 3 nothing to research.
 - **Formatting conventions** — units, scene-break style, chapter-opener
   convention (if any), whether the novel has any in-fiction system/UI text
-  (a LitRPG stat panel, a HUD readout, an epistolary document format, etc.)
+  (an in-world letter or report format, a HUD readout, a progression stat panel, etc.)
   and if so its exact rendering, target chapter length. These depend on
   genre/register being roughly known, so they fit round 2.
 - **Structural extras** — does this novel need the `species-factions`,
@@ -108,12 +111,12 @@ purpose. For each comp, look for:
   author named them as a comp.
 
 For the genre as a whole, look for what that genre's actual reader community
-values and complains about — the kind of research `target-audience-readthrough
-/references/audience-model.md` already models for its original epic
-sci-fi/LitRPG/dark-comedy genre (see its "Research basis" section for the
-shape: reading-motivation research, readers'-advisory sources, and genre
-community discussion, each cited). Genre-specific reader subreddits or
-communities, readers'-advisory writeups, and any craft-side genre analysis are
+values and complains about. `target-audience-readthrough/references/audience-model.md`
+shows the shape the research should take in its "Research basis" section:
+reading-motivation research, readers'-advisory sources, and genre-community
+discussion, each cited, with community discussion described as a qualitative
+signal rather than a statistic. Genre-specific reader subreddits or
+communities, readers'-advisory writeups, and craft-side genre analysis are all
 good sources. Cite everything — a claim about what a genre's readers want is
 only useful if it's traceable, the same way the original file's citations
 are.
@@ -126,6 +129,14 @@ judgment calls.
 
 ## Step 4 — Write the reference files
 
+- **`codex/project.json`** — the book's title and credited author from Step 2.
+  This is the one machine-readable file in the vault and the only place the
+  title is stored; `export-novel-pdf` reads it for the cover and running
+  header. Write it first, since it is the cheapest thing to get right and the
+  most annoying to discover missing at export time. If the author hasn't
+  settled on a title yet, write the working title and say so — a placeholder
+  here is fine, a wrong title baked into sixty files is what the old
+  find-and-replace setup used to produce.
 - **`codex/Genre.md`** — the one-line genre from Step 2, factual, not
   promotional (per the file's own instruction).
 - **`codex/Writing Style.md`** — fill in POV convention, tense, any
@@ -148,15 +159,16 @@ judgment calls.
   identical — write to both, or write one and copy it over the other
   (`sync-skills`'s Job 1 script can confirm zero drift afterward).
 - **`target-audience-readthrough/references/audience-model.md`** (both
-  copies) — this file needs the most rewriting of the set: its "Default
-  reader" preferences, "What to notice naturally" subsections, and "Research
-  basis" citations are all still specific to the genre this boilerplate was
-  ported from. Rewrite them for the declared genre using Step 3's research,
-  keeping the file's overall structure (default reader profile,
-  opinion-calibration vocabulary, what-to-notice checklist, preference
-  variance, cited research basis) — that structure is genre-agnostic and
-  worth preserving even though its content isn't. Remove the file's
-  "Customize before use" banner once done.
+  copies) — this file needs the most work of the set, and it ships with its
+  genre-specific slots empty rather than wrong. Fill in every `<fill in>` from
+  Step 3's research: who this reader is, what they read for, what makes them
+  put a book down, the genre's conventions and where deviation is forgiven, the
+  genre-specific satisfactions under "What to notice naturally", the tone
+  section, the tuning axes, and the "Research basis" citations. Leave
+  everything not marked `<fill in>` exactly as written — the
+  opinion-calibration vocabulary, the general reaction categories, the
+  preference-variance rules and the two general citations are genre-agnostic
+  and already correct. Remove the file's banner once every slot is filled.
 
 Apply these as you would any vault edit — show the author what changed if
 they're present for the session, per `codex/Editing Workflow.md`'s general

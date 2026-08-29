@@ -1,11 +1,11 @@
 ---
 name: sync-skills
-description: Check the {{NOVEL_TITLE}} project's skill folders (.agents/skills for Codex, .claude/skills for Claude Code) for drift against each other, and against the Cowork account originals they were ported from. Use when the user asks to sync, reconcile, or check skills across tools, after editing a skill in one tool, or periodically as upkeep. Reports differences; does not silently overwrite anything.
+description: Check this project's skill folders (.agents/skills for Codex, .claude/skills for Claude Code) for drift against each other, and against the Cowork account originals they were ported from. Use when the user asks to sync, reconcile, or check skills across tools, after editing a skill in one tool, or periodically as upkeep. Reports differences; does not silently overwrite anything.
 ---
 
 # Sync Skills Across Codex, Claude Code, and Cowork
 
-{{NOVEL_TITLE}}'s writing/review skills exist in **three places** that don't update each
+this novel's writing/review skills exist in **three places** that don't update each
 other automatically:
 
 1. **`.agents/skills/`** in the vault — the canonical local copy. Codex CLI
@@ -62,7 +62,7 @@ This can't be automated end-to-end because the Cowork account skills only
 exist inside the user's Claude account, not on this machine. The workflow:
 
 1. Ask the user to open a Cowork session (or ask Claude, in an existing Cowork
-   session, in the {{NOVEL_TITLE}} project) to re-export the skill in question as a
+   session, in this project) to re-export the skill in question as a
    `.skill` file — the same way it was originally delivered when this
    `.agents/skills/` tree was first created. Cowork skills are account-level
    and can drift over time (the author or Claude editing them, or Anthropic

@@ -21,7 +21,7 @@ Do NOT assume the report looks like the `proofread` skill's output
 (numbered "Error N" entries with Original/Suggested/Why fields). Reports
 can also be:
 - A continuity-reviewer style list of inconsistencies.
-- Free-form prose notes ("the pacing drags in the middle, Alex's line on
+- Free-form prose notes ("the pacing drags in the middle, the POV character's line on
   page 3 doesn't match his established voice, there's a typo in
   paragraph 2").
 - A pasted list of beta-reader comments.
@@ -56,8 +56,8 @@ this skill writes.
    - **Direct fixes** — the report gives (or clearly implies) exact
      original text and a specific replacement. Apply these directly.
    - **Described-but-not-dictated fixes** — the report describes a
-     problem ("this line reads awkwardly," "Sam's arm is described as
-     her left arm here but the codex says right") without prescribing
+     problem ("this line reads awkwardly," "the injury is described on
+     the left side here but the codex says right") without prescribing
      exact replacement text. Draft a minimal, in-voice fix consistent
      with the finding and the surrounding prose. Prefer the smallest
      change that resolves the issue — this is a correction pass, not a
@@ -144,9 +144,9 @@ this skill writes.
      Summary and codex "agreeing" with each other and miss that both are
      wrong.
    - Note every file you touched this way in the same changelog entry
-     (step 5) — e.g. "Also corrected the matching thermal-reserve value in
-     `Summary.md` and `codex/systems-mechanics/Alex's Suit & Heat
-     Storage.md`, which still cited the pre-fix number."
+     (step 5) — e.g. "Also corrected the matching charge value in
+     `Summary.md` and the mechanic's page under
+     `codex/systems-mechanics/`, which still cited the pre-fix number."
    - If you're not sure whether a Summary/codex value is meant to track
      this exact fact (as opposed to a deliberately different, later
      state), don't silently overwrite it — flag it to the user the same

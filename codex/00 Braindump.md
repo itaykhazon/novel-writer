@@ -1,4 +1,4 @@
-# {{NOVEL_TITLE}} — STORY BRAINDUMP
+# STORY BRAINDUMP
 
 > This is the future-intent story bible: everything you know about the book that hasn't necessarily hit the page yet. It sits below the manuscript and the codex in authority (see `00 Index.md`) — treat it as your own notes-to-self, not canon, until something here actually gets drafted. Fill in the sections below; delete any that don't apply to your book, and add your own as needed. The point of writing this out fully, in prose, is that an AI assistant reading this vault cold should be able to pick up your voice and intentions for the whole book, not just the parts already drafted.
 

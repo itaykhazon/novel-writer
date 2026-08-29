@@ -1,4 +1,4 @@
-# {{NOVEL_TITLE}} — Project Instructions
+# Project Instructions
 
 <fill in — one line describing the book: genre and hook, e.g. "An epic fantasy novel about...">
 

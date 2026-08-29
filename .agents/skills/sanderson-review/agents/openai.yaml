@@ -1,4 +1,4 @@
 interface:
   display_name: "Sanderson Review"
-  short_description: "Audit {{NOVEL_TITLE}} plot architecture and earned payoffs"
-  default_prompt: "Use $sanderson-review to audit this {{NOVEL_TITLE}} outline's promises, visible progress, character movement, mechanics, and payoffs."
+  short_description: "Audit plot architecture and earned payoffs"
+  default_prompt: "Use $sanderson-review to audit this outline's promises, visible progress, character movement, mechanics, and payoffs."

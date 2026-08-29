@@ -1,9 +1,9 @@
 ---
 name: add-to-codex
-description: Add or update a lore entry (character, location, species/faction, mechanic, or plot thread) in the {{NOVEL_TITLE}} novel's Obsidian codex, at the correct path, with the correct frontmatter, cross-links, and index updates. Use when the user asks to add something to the {{NOVEL_TITLE}} codex, capture new worldbuilding/lore, or when drafting an {{NOVEL_TITLE}} chapter introduces a character, location, creature, or mechanic that doesn't have a codex entry yet.
+description: Add or update a lore entry (character, location, species/faction, mechanic, or plot thread) in this novel's Obsidian codex, at the correct path, with the correct frontmatter, cross-links, and index updates. Use when the user asks to add something to the codex, capture new worldbuilding/lore, or when drafting a chapter introduces a character, location, creature, or mechanic that doesn't have a codex entry yet.
 ---
 
-# Add to the {{NOVEL_TITLE}} Codex
+# Add to the Codex
 
 This skill exists so the codex stays usable as an AI-facing knowledge base, not a
 human scrapbook. The whole point is that a future session (you, with no memory of
@@ -24,7 +24,7 @@ If it's out of sync with what you're about to add, you'll fix that in step 5.
 
 For a new or substantially expanded mechanic, species/faction, location system,
 or plot element, also read the relevant sections of
-`codex/outline/Sanderson Method — {{NOVEL_TITLE}} Working Guide.md`. Skip that extra read
+`codex/outline/Sanderson Method — Working Guide.md`. Skip that extra read
 for a small factual correction or supporting-cast update.
 
 Before creating a new entity, run the expand-before-add check:
@@ -59,19 +59,21 @@ batch, then write the entry from what actually got settled.
 
 **Characters are the one type that gets a folder, not a flat file.** A new
 character entry is `codex/characters/<Name>/<Name>.md` — create the `<Name>/`
-folder alongside the existing character folders (`Alex/`, `Sam/`,
-`Jordan/`, `Riley/`, `Eve Voss/`, `Voreline/`, `Supporting Cast/`). If this
-character is or may become a POV character, also add `codex/characters/<Name>/
-<Name> - Voice.md` in the same folder (see `codex/templates/Character
-Template.md`'s **Voice** section and `codex/characters/Alex/Alex
-Mercer - Voice.md` for the format). `[[Wikilink]]`s resolve by filename
+folder alongside whatever character folders already exist under
+`codex/characters/` (plus the `Supporting Cast/` folder described below). If
+this character is or may become a POV character, also add
+`codex/characters/<Name>/<Name> - Voice.md` in the same folder (see
+`codex/templates/Character Template.md`'s **Voice** section for the format, and
+any existing voice guide in your own vault for a worked example).
+`[[Wikilink]]`s resolve by filename
 regardless of folder, so moving or nesting a character file never breaks
 existing links — but always keep the file inside its own folder rather than
 loose in `codex/characters/`.
 
-Squad-member-specific species/cultures (e.g. Jordan's people) live inside that
+A species or culture that belongs to exactly one character lives inside that
 character's own note, not as a separate species-faction file — only split out a
-species/faction note if it's broader than one character or recurs independently.
+species/faction note if it's broader than one character or recurs
+independently.
 
 Minor one-off named characters who don't need a full note go into
 `codex/characters/Supporting Cast/Supporting Cast.md` as a subsection, not a new
@@ -81,7 +83,8 @@ file. Promote them to their own folder the moment they become plot-relevant.
 
 Read the relevant `00 ... Index.md` for that folder (and `characters/00
 Characters Index.md` if there's any chance it's a person). Check aliases, not
-just the title — e.g. "Sam" vs "Valexia". If it exists, you're updating that
+just the title — a character may be filed under a name, a title, or an
+epithet the prose uses interchangeably. If it exists, you're updating that
 file, not creating a new one.
 
 ## 3. Use the matching template
@@ -101,11 +104,11 @@ Template.md` also documents the per-character folder layout and the optional
   `codex/00 Braindump.md` that hasn't actually happened in a written chapter yet
   must be visibly flagged — a `status:` or `manuscript-status:` frontmatter
   field, or plain text like "not yet reached in the manuscript" / "future
-  material — not yet written." Look at `codex/systems-mechanics/Sam's Arm.md`
-  for the pattern. This is the single most important rule: a future session
+  material — not yet written." Follow whatever pattern an existing entry in
+  your own vault already uses. This is the single most important rule: a future session
   must never mistake Braindump intent for something that already happened on
   the page.
-- **Cite chapters for anything confirmed.** `[[Chapter 4 - Riley]]` style
+- **Cite chapters for anything confirmed.** `[[Chapter 4 - <Title>]]` style
   links, not vague "established earlier."
 - **`[[Wikilink]]` every entity mention** on first use in the note — this
   builds Obsidian's backlink graph for the human user, even though a future

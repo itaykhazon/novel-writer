@@ -1,0 +1,5 @@
+{
+  "title": "Untitled Novel",
+  "author": "Your Name",
+  "_note": "The one machine-readable file in this vault. Scripts read it so no skill or script has to hardcode your book's title. populate-project writes it during setup; edit it by hand any time."
+}

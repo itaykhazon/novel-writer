@@ -1,12 +1,12 @@
 ---
 name: chapter-cycle
-description: Draft an {{NOVEL_TITLE}} chapter from its existing Outline.md and then run the full review-and-fix cycle — proofread, prose, pacing and continuity reviewers, their findings applied as exact-match diffs, iterating until no IMPORTANT notes remain — then update Summary.md and the codex. Use when the user asks to write or draft a chapter and review it, to "draft and review" a chapter, or to run the review-and-fix loop on a chapter that already has prose. If the chapter has no Outline.md yet, use add-chapter first.
+description: Draft a chapter from its existing Outline.md and then run the full review-and-fix cycle — proofread, prose, pacing, continuity and anti-AI-prose reviewers, their findings applied as exact-match diffs, iterating until no IMPORTANT notes remain — then reconcile Summary.md and the codex. Use when the user asks to write or draft a chapter and review it, to "draft and review" a chapter, or to run the review-and-fix loop on a chapter that already has prose. If the chapter has no Outline.md yet, use add-chapter first.
 ---
 
-# {{NOVEL_TITLE}} — Draft & Review Cycle
+# Draft & Review Cycle
 
 One invocation: outline in, reviewed chapter out. This replaces running
-`draft-chapter` and then the four review skills by hand.
+`draft-chapter`, `reconcile-chapter`, and then the five review skills by hand.
 
 The vault is a local folder — this skill operates directly on the files under
 it (no bridge or staging step needed when running against a local checkout).
@@ -82,7 +82,7 @@ Read the outline's `## Sanderson pass` before drafting. It is the chapter's
 structural contract: promise, visible progress, POV want, escalation, payoff,
 end-state change, and resource/limitation budget. For an older outline without
 that section, derive a compact preflight from
-`codex/outline/Sanderson Method — {{NOVEL_TITLE}} Working Guide.md` before Phase 1. Do not
+`codex/outline/Sanderson Method — Working Guide.md` before Phase 1. Do not
 add the full guide to the reviewer bundle; the chapter-specific conclusions
 belong in the outline. Stop for user input if the planned climax requires an
 unseeded ability, unavailable resource, or missing causal setup.
@@ -98,11 +98,33 @@ goes to the vault once, at the end.
 If the chapter file already holds prose, copy it to `drafts/v<N> - <date>.md` in
 the vault before you begin.
 
-Follow the outline's beats in order. You may deepen a beat, add connective
-tissue, or find the specific words. You may not drop a beat, add a plot event,
-introduce a character the outline doesn't have, or change the ending. If a beat
-genuinely doesn't work in prose, say so and get the user's call — don't quietly
-rewrite the plan. Respect the outline's **Constraints** section absolutely.
+Draft it under `draft-chapter`'s rules — read that skill's section 3 rather
+than relying on the summary here. The three that decide whether this chapter
+reads as written or as expanded:
+
+- **The outline locks function and outcome, not sentences.** Never carry a
+  phrase from it into the prose. Its lines are summary-shaped by construction
+  and stay summary-shaped when inflated. Wording that must land verbatim (an
+  oath, a system readout, a planted object's established description) belongs
+  under the outline's `## Verbatim anchors` heading and is exempt.
+- **Compose scene by scene**, finishing each before starting the next.
+- **Write the turning scenes twice.** For the two or three scenes the chapter
+  turns on, write the opening 150–250 words twice with genuinely different
+  attacks, keep the better one, discard the other. This is the only point in
+  the cycle where prose gets *chosen* rather than corrected — everything
+  downstream can remove what is wrong with a draft, and none of it can supply
+  what a draft never had.
+
+Every scene also needs at least one concrete observation only this POV
+character, in this situation, could have made. A chapter that satisfies every
+style rule and fails this reads as competent and unauthored, and no reviewer
+downstream will catch it, because absence has nothing to quote.
+
+Follow the outline's beats in order. You may deepen a beat or give a moment more
+room than the plan gave it. You may not drop a beat, add a plot event, introduce
+a character the outline doesn't have, or change the ending. If a beat genuinely
+doesn't work in prose, say so and get the user's call — don't quietly rewrite
+the plan. Respect the outline's **Constraints** section absolutely.
 
 Voice and house rules are in `references/house-conventions.md` — read it in
 full, it's written to be filled in for your novel's actual POV/tense/register,
@@ -113,22 +135,38 @@ broken most in practice — check it as you write each scene, not after.
 Target length per `codex/Writing Style.md` (default to something reasonable
 for your genre if it isn't filled in yet — ask the user rather than guessing).
 
-Any number that lands on the page — a percentage, a count, a rank tag — is
-canon the moment you write it. Round 1 review and Phase 5's Summary rewrite
-both need to quote that exact value, not re-derive it, so keep track of the
-load-bearing ones as you draft (see Phase 5's numeric cross-check).
+Before each scene, settle five things in your head — the POV goal, what resists
+it, the reader-visible signpost that progress happened, how the exit state
+differs from the entry state, and any finite resource spent or regained. Thirty
+seconds, not a written artifact. A beat lands because the reader can perceive
+what changed, not because the planned event occurred.
 
-Also track, per scene, the POV goal, resistance/escalation, visible progress
-signpost, exit-state change, and finite resources spent or regained. This is a
-scratch ledger only. It prevents a planned beat from occurring on paper without
-creating a change the reader can feel.
+Do **not** keep a running ledger of the chapter's numbers while drafting.
+Accounting and prose compete for the same attention and prose loses; Phase 5
+reads the load-bearing values back off the finished text, which is more reliable
+than remembering them mid-scene.
+
+When the draft is done, check it against its own outline:
+
+```bash
+python3 scripts/check_outline_overlap.py --chapter /tmp/chapter-cycle/chapter.md \
+    --outline "<vault>/novel/arc <N>/Chapter <n> - <Title>/Outline.md"
+```
+
+It reports runs of wording shared with the outline, minus anything declared
+under `## Verbatim anchors`. Evidence, not a verdict — a proper noun or the
+plainest available phrasing is fine. Several long non-anchor runs means the
+chapter was transcribed, and the fix is to rewrite those passages from the
+scene before spending a review round on them. Reword-until-quiet does not
+count as fixing it.
 
 ---
 
 ## Phase 2 — Review round 1
 
-Run all four reviewers — `proofread`, `pacing-review`, `prose-review`,
-`continuity-reviewer` — against the working copy and the bundle. See
+Run all five reviewers — `proofread`, `pacing-review`, `prose-review`,
+`continuity-reviewer`, `anti-ai-prose-review` — against the working copy and the
+bundle. See
 `references/review-protocol.md` for the exact prompt template, the
 suggested effort level per reviewer, and how to run them in parallel if your
 environment supports it (or sequentially if it doesn't — order doesn't
@@ -138,7 +176,16 @@ Every reviewer must be told: **report only, never edit**, and every finding need
 an exact quoted string from the chapter plus a drafted replacement, marked
 IMPORTANT or MINOR. A finding without a quotable anchor can't become a diff.
 
-Do not add `sanderson-review` as a fifth chapter-cycle reviewer. The structural
+`anti-ai-prose-review` is in the set because its failure mode is the cheapest to
+introduce and the most expensive to notice late: it catches the tic-level tells
+(cadence loops, negative-setup-then-flip, stock reaction beats) that read as
+machine-written, and `prose-review` reliably misses them because it is judging
+craft rather than fingerprint. It is also the one reviewer whose findings are
+partly mechanical — run `scripts/scan_prose.py` from that skill first and hand
+its output to the reviewer, rather than making the model re-derive density
+counts it can compute exactly.
+
+Do not add `sanderson-review` to the set. The structural
 work is divided between the existing reviewers: `pacing-review` owns whether
 promise/progress/payoff is reader-visible and proportioned; `continuity-reviewer`
 owns whether every payoff obeys established capabilities, limitations, and
@@ -154,7 +201,7 @@ here, just don't strip it out when adapting the prompt template.
 
 ## Phase 3 — Apply as diffs
 
-Collect all four reports. Write a single patch file — one pass, all reviewers
+Collect all five reports. Write a single patch file — one pass, all reviewers
 together, so conflicting suggestions get resolved once:
 
 ```
@@ -220,43 +267,33 @@ another cycle.
 1. **Proofread pass on the final text only.** The last round of diffs is where
    dangling modifiers and broken parallelism get introduced. One cheap/fast
    pass, working copy only, no bundle.
-2. Write the working copy to the vault chapter path. Update the chapter
-   frontmatter's `characters:`, `locations:`, and `beats:` to what actually
-   appears and actually landed — the outline was a prediction, the prose is
-   the fact.
-3. Rewrite `Summary.md` as a record of what was written (drop `status: planned`),
-   matching `codex/templates/Summary Template.md`— scene by
-   scene, plus `**Sets up:**` and any `**Open thread**`. Every quantitative or
-   categorical claim in it (a percentage, a count, a rank, a placement) must be
-   copied from the final prose, not reconstructed from the outline or from an
-   earlier draft round.
-4. **Numeric/fact cross-check.** Using the scratch list from Phases 3–4, go
-   through each fact that changed during review and confirm the *same* value
-   now appears in: the final prose, the just-rewritten `Summary.md`, and any
-   codex page (step 6) that also states it. This is the step that was
-   previously missing and caused real drift on Chapter 7 — a fix applied to
-   the prose but never propagated to the Summary or codex, which then agreed
-   with each other and looked confirmed. Do this before writing the changelog,
-   not after — the changelog entry in step 5 should already reflect the
-   synced state.
+2. Write the working copy to the vault chapter path.
+3. **Run `reconcile-chapter`.** It owns everything the prose just invalidated:
+   chapter frontmatter (`characters:`, `locations:`, `beats:` — the outline was
+   a prediction, the prose is the fact), the `Summary.md` rewrite, the arc and
+   outline indexes, the thread status lines, the codex, and the numeric
+   cross-check that the same value appears in the prose, the Summary and every
+   codex page that states it. Hand it the scratch list of facts that changed
+   during Phases 3–4 so it can prioritise those, but it re-reads the finished
+   prose regardless — a value that changed in a diff and never propagated is
+   the drift this exists to catch, and it is invisible from inside any one
+   file, since the stale Summary and the stale codex page agree with each other
+   and look confirmed.
+4. Do this before writing the changelog, not after — the changelog should
+   already reflect the synced state.
 5. Write `drafts/Changelog.md` — what each round found and what you did,
    including which non-manuscript files (Summary, codex pages) the numeric
    cross-check touched.
 6. Write `reviews/<Chapter> - review-rounds-<date>.md` — what reviewers praised,
    what they disagreed about, any codex expansion the draft forced.
-7. Update the codex: `codex/00 Index.md` (status + open threads),
-   `novel/arc <N>/00 Arc <N> Index.md`, `codex/outline/Arc <N> — <Title>.md`'s
-   "Chapter N Advances" table (what actually landed, not just what was
-   planned), the status line in every `codex/outline/Thread <X>` file this
-   chapter touched, `codex/outline/00 Outline Index.md`'s drafted/outline-only
-   range, `codex/plot/Macro Progression.md`, and
-   `codex/plot/Mystery Discovery Tracker.md` only for discoveries that
-   actually landed on the page. Run `add-to-codex` for anything genuinely
-   new.
+7. Confirm `reconcile-chapter` reported clean, and act on anything it raised
+   that only the author can settle — a prose/codex contradiction, a beat that
+   never landed, a value that couldn't be made consistent. That skill reports
+   those deliberately rather than fixing them.
 
 Report to the user: word count, scene breakdown, any outline deviation and why,
-reviewer disagreements you resolved, any codex conflict the draft forced, and
-which files the numeric cross-check (step 4) corrected, if any.
+the overlap check's result, reviewer disagreements you resolved, any codex
+conflict the draft forced, and which records `reconcile-chapter` corrected.
 
 ---
 

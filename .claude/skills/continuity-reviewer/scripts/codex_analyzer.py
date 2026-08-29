@@ -105,7 +105,7 @@ class CodexAnalyzer:
 
     def _flag_compound_descriptors(self, content: str) -> List[str]:
         """Flag lines that describe a recurring item with a slash-joined pair of
-        descriptive terms (e.g. "gold/metallic fragment"). This pattern often means
+        descriptive terms (e.g. "brass/bronze compass"). This pattern often means
         an earlier pass noticed two different chapters using different wording for
         the same object and folded them together in the codex instead of resolving
         which chapter is correct (or updating both to match). It is not itself proof
@@ -113,9 +113,18 @@ class CodexAnalyzer:
         skill checks the cited chapters' actual text.
         """
         flags = []
-        # Matches word/word directly before a noun-ish word (fragment, crystal,
-        # vein, item, artifact, stone, shard...), e.g. "gold/metallic fragment"
-        pattern = r"\b([A-Za-z]+/[A-Za-z]+)\s+(fragment|crystal|vein|item|artifact|stone|shard|gem|ore|mineral)\b"
+        # Matches word/word directly before a physical-object noun. The list is
+        # deliberately broad and genre-neutral rather than tuned to one book's
+        # props; extend it with your own recurring object nouns (a ship class, a
+        # garment, an instrument) if this misses drift in your manuscript.
+        OBJECT_NOUNS = (
+            "item|object|artifact|relic|heirloom|token|tool|weapon|blade|sword|"
+            "knife|gun|armor|armour|cloak|coat|robe|mask|ring|pendant|amulet|"
+            "compass|lantern|lamp|key|book|letter|map|box|case|vial|flask|"
+            "stone|shard|crystal|gem|ore|mineral|vein|fragment|"
+            "device|machine|engine|vehicle|ship|boat|cart"
+        )
+        pattern = r"\b([A-Za-z]+/[A-Za-z]+)\s+(" + OBJECT_NOUNS + r")\b"
         for match in re.finditer(pattern, content, re.IGNORECASE):
             # Grab a bit of surrounding context for the flag
             start = max(0, match.start() - 40)
@@ -185,8 +194,8 @@ def main():
     codex_data = analyzer.load_codex()
 
     # Surface compound-descriptor flags up front — these are the cheapest signal
-    # of a possible cross-chapter item-description mismatch (see "gold/metallic
-    # fragment" case) and are easy to miss buried in the full JSON dump below.
+    # of a possible cross-chapter item-description mismatch (the "brass/bronze
+    # compass" case) and are easy to miss buried in the full JSON dump below.
     any_flags = False
     for mech_name, mech_data in codex_data.get("mechanics", {}).items():
         for flag in mech_data.get("compound_descriptor_flags", []):

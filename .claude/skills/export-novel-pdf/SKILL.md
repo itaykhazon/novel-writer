@@ -1,6 +1,6 @@
 ---
 name: export-novel-pdf
-description: Export selected {{NOVEL_TITLE}} manuscript chapters to a polished, phone-friendly PDF with embedded fonts, flush-left prose, preserved italics and bold system readouts, chapter bookmarks, page numbers, and rendered visual verification. Use when the user asks to export, compile, assemble, or send a novel arc or chapter range as a PDF.
+description: Export selected manuscript chapters to a polished, phone-friendly PDF with embedded fonts, flush-left prose, preserved italics and bold system readouts, chapter bookmarks, page numbers, and rendered visual verification. Use when the user asks to export, compile, assemble, or send a novel arc or chapter range as a PDF.
 ---
 
 # Export Novel PDF
@@ -34,7 +34,7 @@ Use the bundled `scripts/export_novel_pdf.py` generator for repeatable exports. 
 - Treat standalone bold dialogue blocks beginning with `**"` or `**“` as prose dialogue, not UI readouts.
 - Render two-line location/date openers in centered italic text.
 - Render bare `—` scene breaks as centered ochre em dashes with spacing.
-- If your novel uses system/UI text (a LitRPG-style stat panel, HUD readout, or similar in-fiction interface block) rendered as an all-bold standalone block, style it as a UI panel rather than a subtle box: a light tinted background, a rounded border, and indented padding, so it reads as an interface element interrupting the prose rather than as narration. Skip this rule entirely if your novel has no such convention.
+- If your novel uses in-fiction interface text (a stat panel, a HUD readout, an in-world document block, or similar) rendered as an all-bold standalone block, style it as a UI panel rather than a subtle box: a light tinted background, a rounded border, and indented padding, so it reads as an interface element interrupting the prose rather than as narration. Skip this rule entirely if your novel has no such convention.
 - Include a restrained title page, a running header built from the book/arc title, page numbers, PDF metadata, and chapter outline bookmarks.
 - Credit the author configured for this project (see the project's README/config) on the cover and in PDF metadata by default; accept `--author` when another author is explicitly requested.
 - Strip YAML frontmatter. Never include `Summary.md`, `Outline.md`, `Changelog.md`, or files in `drafts/` as manuscript prose.

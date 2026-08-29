@@ -89,7 +89,7 @@ completeness, not prose execution.
 - **Limitations and costs:** [what remains active]
 - **Resource ledger:** [opening → gains/losses → spends/strain → closing]
 - **Plot/character/setting interconnection:** [analysis]
-- **LitRPG progression:** [how changed numbers/skills alter choices, tactics, identity, pressure, or cost]
+- **Progression (if the story has one):** [how changed ranks/skills/capabilities alter choices, tactics, identity, pressure, or cost — or `not applicable`]
 
 ## Decisions Needed
 
@@ -152,7 +152,7 @@ completeness, not prose execution.
 
 ---
 
-*Sanderson review completed for {{NOVEL_TITLE}}. Review only; no manuscript changes applied.*
+*Sanderson review completed for this novel. Review only; no manuscript changes applied.*
 ```
 
 ## Finding category labels
