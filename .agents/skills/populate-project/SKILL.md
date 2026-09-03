@@ -12,7 +12,7 @@ past tense, or any particular genre. Instead they read from a small set of
 reference/data files for the specifics: `codex/Genre.md`, `codex/Writing
 Style.md`, `codex/Craft Influences.md`,
 `chapter-cycle/references/house-conventions.md`, and
-`target-audience-readthrough/references/audience-model.md`. Fresh off this
+`reviewers/target-audience-readthrough/references/audience-model.md`. Fresh off this
 export, those files are placeholders — bracketed `<fill in>` prompts, or (for
 `audience-model.md`) content still carrying the specific genre of the project
 this boilerplate was ported from.
@@ -35,9 +35,9 @@ actually looked into what that author's prose *does*, not just named it.
 - `codex/Craft Influences.md`
 - `.agents/skills/chapter-cycle/references/house-conventions.md` **and** its
   mirror `.claude/skills/chapter-cycle/references/house-conventions.md`
-- `.agents/skills/target-audience-readthrough/references/audience-model.md`
+- `.agents/skills/reviewers/target-audience-readthrough/references/audience-model.md`
   **and** its mirror
-  `.claude/skills/target-audience-readthrough/references/audience-model.md`
+  `.claude/skills/reviewers/target-audience-readthrough/references/audience-model.md`
   — this one matters most: unfilled, it simulates a reader calibrated to
   nobody, which is worse than not running that skill at all
 - Optionally, with the author's explicit go-ahead (see Step 5),
@@ -111,7 +111,7 @@ purpose. For each comp, look for:
   author named them as a comp.
 
 For the genre as a whole, look for what that genre's actual reader community
-values and complains about. `target-audience-readthrough/references/audience-model.md`
+values and complains about. `reviewers/target-audience-readthrough/references/audience-model.md`
 shows the shape the research should take in its "Research basis" section:
 reading-motivation research, readers'-advisory sources, and genre-community
 discussion, each cited, with community discussion described as a qualitative
@@ -158,7 +158,7 @@ judgment calls.
   going stale. Keep the two copies (`.agents/skills/` and `.claude/skills/`)
   identical — write to both, or write one and copy it over the other
   (`sync-skills`'s Job 1 script can confirm zero drift afterward).
-- **`target-audience-readthrough/references/audience-model.md`** (both
+- **`reviewers/target-audience-readthrough/references/audience-model.md`** (both
   copies) — this file needs the most work of the set, and it ships with its
   genre-specific slots empty rather than wrong. Fill in every `<fill in>` from
   Step 3's research: who this reader is, what they read for, what makes them
