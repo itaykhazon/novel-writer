@@ -1,7 +1,7 @@
 ---
 name: add-reviewer
 description: |
-  Scaffold a new reviewer skill under reviewers/ — a skill that reads manuscript prose (or a run of chapters) and produces a report — conformant to reviewers/TEMPLATE.md, in both .agents/skills and .claude/skills. Interviews the user for what the reviewer checks and where it fits (reviewer-kind, scope, thinking-level, complexity, whether chapter-cycle should run it automatically and in what order), scaffolds the frontmatter and section skeleton, then writes the reviewing logic itself. Use when the user asks to add a new reviewer, a new review skill, or a new craft/continuity/structural/audience check to the review pipeline.
+  Scaffold a new reviewer skill — one that reads manuscript prose (or a run of chapters) and produces a report — conformant to add-reviewer/references/reviewer-template.md, in both .agents/skills and .claude/skills. Interviews the user for what the reviewer checks and where it fits (reviewer-kind, scope, thinking-level, complexity, whether chapter-cycle should run it automatically and in what order), scaffolds the frontmatter and section skeleton, then writes the reviewing logic itself. Use when the user asks to add a new reviewer, a new review skill, or a new craft/continuity/structural/audience check to the review pipeline.
 ---
 
 # Add a Reviewer
@@ -9,21 +9,25 @@ description: |
 This skill exists so a ninth (or twelfth) reviewer costs one careful pass
 through this file instead of someone improvising a `SKILL.md` that's missing
 the section `chapter-cycle` or `draft-from-review` silently depends on.
-Everything under `reviewers/` — the eight that ship with this vault and
-whatever gets added after — has to satisfy the same contract for those two
-skills to keep working without special-casing anything.
+Every reviewer skill — the eight that ship with this vault and whatever
+gets added after — has to satisfy the same contract for those two skills to
+keep working without special-casing anything. Reviewers aren't grouped in
+their own subfolder; each lives directly alongside every other skill
+(`.agents/skills/<name>/` and `.claude/skills/<name>/`), so both Codex CLI
+and Claude Code discover and can invoke them individually by name — a
+reviewer is identified by its frontmatter, not its location.
 
 ## 0. Read the template first
 
-Read `reviewers/TEMPLATE.md` in full before anything else. It's the contract
-this skill scaffolds against and the source of truth for every "required"
-below — this file summarizes it, TEMPLATE.md is authoritative if the two ever
-disagree.
+Read `add-reviewer/references/reviewer-template.md` in full before anything
+else. It's the contract this skill scaffolds against and the source of truth
+for every "required" below — this file summarizes it, reviewer-template.md
+is authoritative if the two ever disagree.
 
 ## 1. Establish what this reviewer actually owns
 
 Ask the user, in plain language if they haven't already said it: what should
-this reviewer catch that nothing under `reviewers/` already catches?
+this reviewer catch that no existing reviewer already catches?
 
 Then check that it's actually new territory. Run
 `python3 chapter-cycle/scripts/list_reviewers.py --all` to see every existing
@@ -45,7 +49,7 @@ this is a single round, not a multi-round dependency tree:
 1. **Name** — kebab-case, e.g. `dialogue-tag-review`. Suggest one derived from
    what step 1 established.
 2. **`reviewer-kind`** — `line` | `structural` | `reader-simulation`. Suggest
-   based on what step 1 established (see `reviewers/TEMPLATE.md` for what each
+   based on what step 1 established (see `reviewer-template.md` for what each
    means).
 3. **`reviewer-scope`** — `chapter` | `arc` | `book`. Suggest based on the
    largest unit the reviewer actually needs to read to do its job.
@@ -65,7 +69,7 @@ If `default-in-cycle` comes back `true`, run one more short round: show the
 current order (`python3 chapter-cycle/scripts/list_reviewers.py`) and ask
 where the new reviewer slots in. Suggest a position using the standing rule
 from `chapter-cycle/references/review-protocol.md` and
-`reviewers/TEMPLATE.md`'s `cycle-order` section — structural/factual checks
+`reviewer-template.md`'s `cycle-order` section — structural/factual checks
 before craft/style checks before mechanical ones — as the default, but the
 user's call wins.
 
@@ -86,13 +90,13 @@ python3 add-reviewer/scripts/scaffold_reviewer.py \
 ```
 
 It refuses if the name already exists in either tree. It writes
-byte-identical skeleton `SKILL.md` files to both
-`.agents/skills/reviewers/<name>/` and `.claude/skills/reviewers/<name>/` —
-frontmatter filled in, every required `reviewers/TEMPLATE.md` section stubbed
-with an HTML comment describing what belongs there. If the reviewer is
-entering the cycle, it also shifts every existing default-in-cycle reviewer at
-or after that slot down by one, in both trees, so `cycle-order` stays a clean
-sequence without any hand-renumbering.
+byte-identical skeleton `SKILL.md` files to both `.agents/skills/<name>/` and
+`.claude/skills/<name>/` — frontmatter filled in, every required
+`reviewer-template.md` section stubbed with an HTML comment describing what
+belongs there. If the reviewer is entering the cycle, it also shifts every
+existing default-in-cycle reviewer at or after that slot down by one, in
+both trees, so `cycle-order` stays a clean sequence without any
+hand-renumbering.
 
 ## 4. Write the review logic
 
@@ -127,7 +131,7 @@ by hand a second time — that's how the two trees drift.
 
 ```bash
 python3 .agents/skills/sync-skills/scripts/diff_skill_dirs.py \
-    --a .agents/skills/reviewers --b .claude/skills/reviewers
+    --a .agents/skills --b .claude/skills
 ```
 
 If `default-in-cycle: true`, also run
@@ -155,7 +159,7 @@ updated, if any, per step 4.
 - Don't invent a reviewer's checks from nothing. If step 1 didn't produce a
   clear "this is the gap none of the other eight cover," say so and ask,
   rather than padding a thin idea out into all seven required sections.
-- Don't skip reading `reviewers/TEMPLATE.md`, even for a reviewer that feels
+- Don't skip reading `reviewer-template.md`, even for a reviewer that feels
   similar to an existing one — the required sections (especially "Scope and
   boundaries") are the mechanism that keeps a new reviewer from silently
   duplicating an existing one's findings.

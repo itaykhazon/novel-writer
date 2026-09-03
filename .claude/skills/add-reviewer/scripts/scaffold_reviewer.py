@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Scaffold a new reviewer skill under reviewers/, in both .agents/skills/ and
-.claude/skills/, conformant to reviewers/TEMPLATE.md's frontmatter contract.
+"""Scaffold a new reviewer skill in both .agents/skills/ and .claude/skills/,
+conformant to add-reviewer/references/reviewer-template.md's frontmatter
+contract.
 
 Self-locating: assumes skills-root/add-reviewer/scripts/<this file>, with
-reviewers/ and chapter-cycle/ as siblings under the same skills root. Run it
-once, from either tree (it doesn't matter which) -- it writes byte-identical
-skeleton SKILL.md files to both .agents/skills/reviewers/<name>/ and
-.claude/skills/reviewers/<name>/.
+chapter-cycle as a sibling under the same skills root. Run it once, from
+either tree (it doesn't matter which) -- it writes byte-identical skeleton
+SKILL.md files to both .agents/skills/<name>/ and .claude/skills/<name>/.
+Reviewers aren't grouped in their own subfolder -- they're plain skills
+alongside every other skill in the tree, so both Codex CLI and Claude Code
+discover and can invoke them individually by name.
 
 Usage:
     python3 scripts/scaffold_reviewer.py --name my-reviewer \
@@ -22,7 +25,7 @@ that slot (in either tree) is shifted down by one to make room -- nothing is
 overwritten, and nothing needs hand-renumbering afterward.
 
 This only writes the frontmatter and a stubbed section skeleton (each
-required section from reviewers/TEMPLATE.md, marked with an HTML comment
+required section from reviewer-template.md, marked with an HTML comment
 saying what belongs there). Writing the actual reviewing logic -- what this
 reviewer checks, its scope-and-boundaries language, its severity scale, its
 workflow and output format -- is a judgment call for whoever runs this skill,
@@ -49,7 +52,7 @@ default-in-cycle: {default_in_cycle}{cycle_order_line}
 
 # {title}
 
-<!-- Opening paragraph(s), no heading -- see reviewers/TEMPLATE.md item 1.
+<!-- Opening paragraph(s), no heading -- see reviewer-template.md item 1.
      One or two sentences: what does this reviewer look for, and what does
      it hand back? -->
 
@@ -59,14 +62,14 @@ default-in-cycle: {default_in_cycle}{cycle_order_line}
      codex/ files, a POV voice guide, a bundled analysis script to run
      first. Say explicitly what NOT to do here too, if this reviewer is
      meant to work from a prebuilt bundle rather than exploring the vault.
-     See reviewers/TEMPLATE.md item 2. -->
+     See reviewer-template.md item 2. -->
 
 ## Scope and boundaries
 
 <!-- What this reviewer owns, and an explicit list of sibling reviewers it
      defers to for anything adjacent, by name. This is the mechanism that
      keeps reviewers from duplicating each other's findings on the same
-     passage -- skipping it is how that drifts. See reviewers/TEMPLATE.md
+     passage -- skipping it is how that drifts. See reviewer-template.md
      item 3, and read a couple of existing reviewers' own "Scope and
      boundaries" sections before writing this one. -->
 
@@ -75,24 +78,24 @@ default-in-cycle: {default_in_cycle}{cycle_order_line}
 <!-- The scale this reviewer's findings are labeled with. This vault has
      both a HIGH/MEDIUM/LOW and a CRITICAL/WARNING/NOTE convention in use --
      pick whichever fits this reviewer's own judgment calls better, say
-     which, and define each tier. See reviewers/TEMPLATE.md item 4. -->
+     which, and define each tier. See reviewer-template.md item 4. -->
 
 ## Workflow
 
 <!-- The numbered steps from "read the input" to "return/save the report."
-     See reviewers/TEMPLATE.md item 5. -->
+     See reviewer-template.md item 5. -->
 
 ## Output format
 
 <!-- The exact report template, including where (and under what filename)
      it gets saved, and what happens for input that isn't a saved chapter
-     (an unnamed pasted passage). See reviewers/TEMPLATE.md item 6. -->
+     (an unnamed pasted passage). See reviewer-template.md item 6. -->
 
 ## Hard safeguards
 
 <!-- The explicit do-not-do list: never edit manuscript prose, never
      overreach into a sibling reviewer's territory, whatever failure modes
-     are specific to this reviewer's judgment call. See reviewers/TEMPLATE.md
+     are specific to this reviewer's judgment call. See reviewer-template.md
      item 7. -->
 """
 
@@ -154,7 +157,7 @@ def main():
     tree_b = os.path.join(vault_root, ".claude", "skills")
 
     for tree in (tree_a, tree_b):
-        dest = os.path.join(tree, "reviewers", args.name)
+        dest = os.path.join(tree, args.name)
         if os.path.exists(dest):
             print("error: %s already exists" % dest, file=sys.stderr)
             return 1
@@ -176,7 +179,7 @@ def main():
     )
 
     for tree in (tree_a, tree_b):
-        dest_dir = os.path.join(tree, "reviewers", args.name)
+        dest_dir = os.path.join(tree, args.name)
         os.makedirs(dest_dir)
         dest_file = os.path.join(dest_dir, "SKILL.md")
         with open(dest_file, "w", encoding="utf-8") as f:
@@ -191,7 +194,7 @@ def main():
                 if r.get("name") == args.name:
                     continue
                 if r.get("default-in-cycle") and r.get("cycle-order") is not None and r["cycle-order"] >= args.cycle_order:
-                    path = os.path.join(tree, "reviewers", r["name"], "SKILL.md")
+                    path = os.path.join(tree, r["name"], "SKILL.md")
                     if shift_cycle_order(path, args.cycle_order):
                         shifted.append(path)
         if shifted:
@@ -203,10 +206,10 @@ def main():
     print()
     print("Next: fill in the body sections in both new SKILL.md files (they're")
     print("identical right now -- write the content once, then copy it over the")
-    print("other rather than retyping it) per reviewers/TEMPLATE.md, then verify:")
+    print("other rather than retyping it) per reviewer-template.md, then verify:")
     print("  python3 %s \\" % diff_script)
     print("      --a %s --b %s --single" % (
-        os.path.join(tree_a, "reviewers", args.name), os.path.join(tree_b, "reviewers", args.name)))
+        os.path.join(tree_a, args.name), os.path.join(tree_b, args.name)))
     return 0
 
 

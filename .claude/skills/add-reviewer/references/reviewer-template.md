@@ -1,16 +1,23 @@
 # Reviewer skill template
 
-This file is not a skill — it has no `name`/`description` frontmatter and
-neither Codex nor Claude Code will list it as invocable. It is the contract
-every skill folder under `reviewers/` is expected to satisfy, and what
-`add-reviewer` scaffolds from when you create a new one.
+This file lives as a reference inside `add-reviewer` rather than as its own
+skill — it has no `name`/`description` frontmatter and neither Codex nor
+Claude Code will list it as invocable. It is the contract every reviewer
+skill is expected to satisfy, and what `add-reviewer` scaffolds from when
+you create a new one.
 
 A "reviewer" in this vault is any skill whose job is to read manuscript
 prose (or, for the two whole-story reviewers, a run of chapters) and produce
-a **report** — it never edits manuscript prose itself. `chapter-cycle`
-discovers reviewers by scanning `reviewers/*/SKILL.md` for the frontmatter
-block below; `draft-from-review` applies any reviewer's saved report to the
-manuscript afterward.
+a **report** — it never edits manuscript prose itself. Reviewers aren't
+grouped into their own subfolder; each lives directly alongside every other
+skill (`.agents/skills/<name>/` and `.claude/skills/<name>/`), the same as
+`add-chapter` or `chapter-cycle`, so both tools discover and can invoke them
+individually by name. What makes a skill a reviewer is its frontmatter, not
+its location: `chapter-cycle` discovers the default set by scanning every
+sibling skill's `SKILL.md` for the block below and keeping the ones that
+declare `reviewer-kind`; `draft-from-review` applies any reviewer's saved
+report to the manuscript afterward, whether or not it's in that default
+set.
 
 ## Required frontmatter
 
@@ -49,11 +56,11 @@ cycle-order: 3                   # only present when default-in-cycle: true
   `default-in-cycle: false` reviewer with `complexity: 9` getting run
   ad hoc against a whole arc).
 - **`default-in-cycle`** — whether `chapter-cycle` includes this reviewer in
-  its automatic Phase 2 round without being asked. Adding a reviewer to this
-  directory never silently makes every `chapter-cycle` run more expensive —
-  a new reviewer ships `false` until someone deliberately flips it on. A
-  reviewer whose `reviewer-scope` isn't `chapter` should almost always stay
-  `false`, since `chapter-cycle` only ever hands it one chapter's bundle.
+  its automatic Phase 2 round without being asked. Adding a new reviewer
+  never silently makes every `chapter-cycle` run more expensive — it ships
+  `false` until someone deliberately flips it on. A reviewer whose
+  `reviewer-scope` isn't `chapter` should almost always stay `false`, since
+  `chapter-cycle` only ever hands it one chapter's bundle.
 - **`cycle-order`** — where this reviewer runs relative to the other
   `default-in-cycle: true` reviewers, lower runs first. Only meaningful (and
   only present) on reviewers that are actually in the cycle. The vault's
@@ -120,11 +127,19 @@ Optional, add only what the reviewer actually needs:
 
 ## Keep both trees identical
 
-Every reviewer folder must be byte-identical between `.agents/skills/reviewers/<name>/`
-and `.claude/skills/reviewers/<name>/` — write to one and copy over the
-other, then confirm with `sync-skills`:
+Every reviewer folder must be byte-identical between `.agents/skills/<name>/`
+and `.claude/skills/<name>/` — write to one and copy over the other, then
+confirm with `sync-skills`, either for just this reviewer:
 
 ```bash
 python3 .agents/skills/sync-skills/scripts/diff_skill_dirs.py \
-    --a .agents/skills/reviewers --b .claude/skills/reviewers
+    --a .agents/skills/<name> --b .claude/skills/<name> --single
+```
+
+or for the whole tree at once (catches drift anywhere, not just in the
+reviewer you just touched):
+
+```bash
+python3 .agents/skills/sync-skills/scripts/diff_skill_dirs.py \
+    --a .agents/skills --b .claude/skills
 ```

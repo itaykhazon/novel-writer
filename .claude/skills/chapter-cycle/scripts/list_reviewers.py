@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""List reviewer skills from the sibling reviewers/ directory, parsed from
-each SKILL.md's frontmatter, filtered and ordered for chapter-cycle's Phase 2.
+"""List reviewer skills, parsed from each sibling skill's SKILL.md
+frontmatter, filtered and ordered for chapter-cycle's Phase 2.
 
-Self-locating: assumes the layout skills-root/chapter-cycle/scripts/<this file>
-and skills-root/reviewers/<name>/SKILL.md, since chapter-cycle and reviewers/
-are always siblings under the same .agents/skills or .claude/skills tree.
+Reviewers aren't grouped in their own subfolder -- they're plain skills
+living directly alongside chapter-cycle (.../skills/<name>/SKILL.md), same as
+every other skill in this tree, so both Codex CLI and Claude Code discover
+and can invoke them individually by name. What makes a skill a "reviewer" is
+its frontmatter, not its location: any skill whose SKILL.md declares a
+`reviewer-kind` field is treated as one -- see
+add-reviewer/references/reviewer-template.md for the full contract.
+
+Self-locating: assumes the layout skills-root/chapter-cycle/scripts/<this
+file>, since chapter-cycle sits directly in the same skills root as every
+reviewer it discovers.
 
 Usage:
     python3 scripts/list_reviewers.py                # default-in-cycle only, in cycle-order
@@ -47,17 +55,17 @@ def parse_frontmatter(path):
     return data
 
 
-def load_reviewers(reviewers_root):
+def load_reviewers(skills_root):
     out = []
-    if not os.path.isdir(reviewers_root):
+    if not os.path.isdir(skills_root):
         return out
-    for name in sorted(os.listdir(reviewers_root)):
-        skill_path = os.path.join(reviewers_root, name, "SKILL.md")
+    for name in sorted(os.listdir(skills_root)):
+        skill_path = os.path.join(skills_root, name, "SKILL.md")
         if not os.path.isfile(skill_path):
-            continue  # e.g. TEMPLATE.md, which has no SKILL.md of its own
+            continue  # not a skill folder at all (no SKILL.md)
         fm = parse_frontmatter(skill_path)
         if not fm or "reviewer-kind" not in fm:
-            continue  # not a reviewer-template-conformant skill; skip rather than guess
+            continue  # a skill, but not a reviewer -- skip rather than guess
         fm.setdefault("name", name)
         fm["default-in-cycle"] = fm.get("default-in-cycle", "false").lower() == "true"
         try:
@@ -80,9 +88,8 @@ def main():
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     skills_root = os.path.dirname(os.path.dirname(script_dir))  # .../chapter-cycle/scripts -> .../chapter-cycle -> skills root
-    reviewers_root = os.path.join(skills_root, "reviewers")
 
-    reviewers = load_reviewers(reviewers_root)
+    reviewers = load_reviewers(skills_root)
     if not args.all:
         reviewers = [r for r in reviewers if r["default-in-cycle"]]
         reviewers.sort(key=lambda r: (r["cycle-order"] is None, r["cycle-order"]))
@@ -94,7 +101,7 @@ def main():
         return 0
 
     if not reviewers:
-        print("No reviewers found under %s" % reviewers_root, file=sys.stderr)
+        print("No reviewers found under %s" % skills_root, file=sys.stderr)
         return 1
 
     width = max(len(r["name"]) for r in reviewers)

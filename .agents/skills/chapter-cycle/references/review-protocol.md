@@ -7,7 +7,7 @@ Each reviewer's `SKILL.md` frontmatter carries its own `thinking-level`
 source of truth for how much reasoning effort to give it. Run
 `python3 scripts/list_reviewers.py --all` from `chapter-cycle/` to see every
 reviewer's `thinking-level` and `complexity` alongside its name, or read
-`reviewers/<name>/SKILL.md` directly.
+each reviewer's own `SKILL.md` directly.
 
 If your environment lets you choose a model or effort level per review pass,
 match it to that field — on the original run of this pipeline, using the

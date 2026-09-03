@@ -1,6 +1,6 @@
 ---
 name: chapter-cycle
-description: Draft a chapter from its existing Outline.md and then run the full review-and-fix cycle — the default reviewer set from reviewers/ (proofread, prose, pacing, continuity and anti-AI-prose reviewers, by default), their findings applied as exact-match diffs, iterating until no IMPORTANT notes remain — then reconcile Summary.md and the codex. Use when the user asks to write or draft a chapter and review it, to "draft and review" a chapter, or to run the review-and-fix loop on a chapter that already has prose. If the chapter has no Outline.md yet, use add-chapter first.
+description: Draft a chapter from its existing Outline.md and then run the full review-and-fix cycle — the default reviewer set (proofread, prose, pacing, continuity and anti-AI-prose reviewers, by default), their findings applied as exact-match diffs, iterating until no IMPORTANT notes remain — then reconcile Summary.md and the codex. Use when the user asks to write or draft a chapter and review it, to "draft and review" a chapter, or to run the review-and-fix loop on a chapter that already has prose. If the chapter has no Outline.md yet, use add-chapter first.
 ---
 
 # Draft & Review Cycle
@@ -164,20 +164,20 @@ count as fixing it.
 
 ## Phase 2 — Review round 1
 
-Get the current default reviewer set, in run order, straight from
-`reviewers/`:
+Get the current default reviewer set, in run order:
 
 ```bash
 python3 scripts/list_reviewers.py
 ```
 
-This reads every `reviewers/<name>/SKILL.md`'s frontmatter and prints the
-`default-in-cycle: true` reviewers sorted by `cycle-order` — as of this
+This scans every sibling skill's `SKILL.md` frontmatter and prints the ones
+that declare `default-in-cycle: true`, sorted by `cycle-order` — as of this
 writing that's `continuity-reviewer`, `pacing-review`, `prose-review`,
 `anti-ai-prose-review`, `proofread`, in that order, but treat the script's
 output as the source of truth over any list written here, since adding or
 re-tuning a reviewer changes this set without touching this file. Run
-`--all` to see every reviewer in `reviewers/`, including the opt-in ones.
+`--all` to see every reviewer (any skill declaring `reviewer-kind` in its
+frontmatter), including the opt-in ones.
 
 Run each reviewer in the printed set against the working copy and the
 bundle. See `references/review-protocol.md` for the exact prompt template
