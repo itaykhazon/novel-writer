@@ -51,13 +51,13 @@ a passage fails. The author can defend a choice after seeing the evidence.
 1. Read the supplied prose in full before diagnosing individual lines.
 2. Read [references/smell-catalog.md](references/smell-catalog.md) in full. It
    defines the smells, thresholds, exceptions, remedies, and research basis.
-3. For an Afela chapter, also read:
+3. For a chapter in this project, also read:
    - `codex/Writing Style.md`
    - `codex/Craft Influences.md`
    - the current POV character's `<Name> - Voice.md`
    - `codex/Editing Workflow.md` when saving a report
 
-The manuscript outranks the codex, and Afela's house style outranks a generic
+The manuscript outranks the codex, and this novel's house style outranks a generic
 maxim. Surface conflicts; do not rewrite around them silently.
 
 ## Scope and boundaries
@@ -81,7 +81,7 @@ allowed to name a smell:
 
 - `proofread` owns grammar, spelling, punctuation, and capitalization errors.
 - `prose-review` owns systematic deep-POV distance, filter words, sensory
-  range, and Afela voice calibration.
+  range, and voice calibration.
 - `anti-ai-prose-review` owns model-shaped phrase families and claims about
   templated or AI-like texture.
 - `pacing-review` owns full scene/sequel architecture and tension-rate maps.
@@ -102,7 +102,7 @@ When two rules conflict, use this order:
 1. Canon and factual continuity.
 2. Reader comprehension of the intended event.
 3. POV knowledge, character voice, and scene purpose.
-4. Afela house style and formatting.
+4. This novel's house style and formatting.
 5. General craft maxims.
 
 Never damage a higher level to satisfy a lower one. Passive voice, adverbs,
@@ -159,7 +159,7 @@ purposeful, voice-specific, or necessary for pace.
    violation.
 7. **Order findings** HIGH → MEDIUM → LOW, then by appearance within each
    severity.
-8. **Save Afela reports** in the top-level `reviews/` folder as
+8. **Save reports** in the top-level `reviews/` folder as
    `<Chapter Name> - prose-smell-review-<YYYY-MM-DD>.md`. For multiple chapters,
    save one report per chapter. For unnamed pasted prose, respond in chat unless
    the user requests a file.
@@ -254,13 +254,13 @@ inventing an unauthorized plot event]
 
 ---
 
-*Prose-smell review completed for Afela novel.*
+*Prose-smell review completed.*
 ```
 
 Omit **Defensible Exceptions** when no likely false positive needs explanation.
 Omit **Proven Strengths** when nothing merits a specific callout; there is no
 praise quota. Never use either section to soften the summary or findings. Use a
-generic footer for non-Afela prose.
+generic footer for prose from outside this project (add ": for this novel" to the closing line when reviewing a chapter here).
 
 ## Applied-status tracking
 

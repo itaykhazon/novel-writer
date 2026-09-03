@@ -162,7 +162,7 @@ is harder to retain because it has no active hook.
 
 **Do not flag:** Deliberately paced political, reflective, or worldbuilding
 scenes that pay for their length through character, tension, discovery, or
-atmosphere. Afela explicitly allows non-action scenes to breathe.
+atmosphere. Check `codex/Writing Style.md` — many novels explicitly allow non-action scenes to breathe.
 
 **Preferred remedy:** Keep only what changes the current read; ground the
 concept in an object, interface behavior, action, cost, or misunderstanding;
