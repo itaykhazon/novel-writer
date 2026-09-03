@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prose Smell Review"
+  short_description: "Brutally flag prose smells and draft exact fixes"
+  default_prompt: "Use $prose-smell-review to give this fiction a brutal, evidence-based review and propose exact voice-matched fixes."
