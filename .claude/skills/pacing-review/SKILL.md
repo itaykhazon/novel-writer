@@ -2,6 +2,12 @@
 name: pacing-review
 description: |
   Review chapter/scene-level PACING — the rate tension, information, and story-time are delivered, and whether it matches what each moment needs. Flags DRAGGING (static scenes, redundant introspection, conflict that never escalates, stalled description) and RUSHED (major beats with no reaction, conflict resolved with no resistance, skipped setup, beats crammed together) — every finding includes a drafted Replacement, not just a diagnosis. STRUCTURAL/SCENE-LEVEL pass, distinct from prose-review (sentence rhythm/voice) and continuity-reviewer (facts/timeline). Use when asked to review pacing, check if a chapter drags or feels rushed, wants a pacing report/map, asks "does this move too fast/slow," or wants action-vs-reflection balance feedback. Also use proactively after drafting a new chapter, alongside proofread/prose-review/continuity-reviewer, even if the user just says "review this chapter."
+reviewer-kind: line
+reviewer-scope: chapter
+thinking-level: medium
+complexity: 5
+default-in-cycle: true
+cycle-order: 2
 ---
 
 # Pacing Review
@@ -29,6 +35,19 @@ Most pacing problems are one of these two structural pieces missing or overstayi
 - **prose-review** owns sentence/paragraph-level wording — fragment runs, sentence length variation, filter words, voice. If a passage's problem is purely *how a sentence is worded* (not what beats are present or missing), note that pacing-review saw a symptom but let prose-review own the word-level polish.
 - **continuity-reviewer** owns whether elapsed time is *factually* plausible (travel times, whether 2 hours is enough for an overnight-feeling beat). Pacing-review owns whether the *narrative weight* given to a beat matches its dramatic importance, regardless of whether the clock math checks out.
 - **pacing-review** owns: scene/sequel structure, escalation, reaction-beat presence, information pacing (setup vs. payoff), and the overall tension curve of the chapter — **and it drafts the fix, not just the diagnosis.** Every finding needs a concrete Replacement: an actual reaction beat to insert, actual text to cut, an actual compressed version of a stretch that's dragging. A pacing report is only as useful as its worst finding's fix — "add more reaction here" leaves the writer with the same blank page; a drafted sentence or two of the scene's actual POV character reacting gives them something to react to, edit, or reject. Match the POV character's voice as best you can (see prose-review's rule 2 on free indirect discourse for the target register) — it doesn't need to be publication-final (that's what a follow-up prose-review pass on the applied fix is for), but it must be a real, usable draft, not a placeholder description.
+
+## Scope and boundaries
+
+This reviewer owns scene-level structure: whether tension, information, and
+story-time are delivered at the rate each moment needs. `prose-review` owns
+sentence/paragraph-level wording — if a passage's problem is purely how a
+sentence is worded, not what beats are present or missing, let prose-review
+own the word-level polish. `continuity-reviewer` owns whether elapsed time
+is *factually* plausible; this reviewer owns whether the *narrative weight*
+given to a beat matches its dramatic importance, regardless of whether the
+clock math checks out. See "Why this skill exists" above for the fuller
+distinction from `sanderson-review`, which this reviewer's structural checks
+are meant to substitute for inside `chapter-cycle`.
 
 ## Rules and issue types
 

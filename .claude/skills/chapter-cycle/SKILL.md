@@ -1,12 +1,12 @@
 ---
 name: chapter-cycle
-description: Draft a chapter from its existing Outline.md and then run the full review-and-fix cycle — proofread, prose, pacing, continuity and anti-AI-prose reviewers, their findings applied as exact-match diffs, iterating until no IMPORTANT notes remain — then reconcile Summary.md and the codex. Use when the user asks to write or draft a chapter and review it, to "draft and review" a chapter, or to run the review-and-fix loop on a chapter that already has prose. If the chapter has no Outline.md yet, use add-chapter first.
+description: Draft a chapter from its existing Outline.md and then run the full review-and-fix cycle — the default reviewer set (proofread, prose, pacing, continuity and anti-AI-prose reviewers, by default), their findings applied as exact-match diffs, iterating until no IMPORTANT notes remain — then reconcile Summary.md and the codex. Use when the user asks to write or draft a chapter and review it, to "draft and review" a chapter, or to run the review-and-fix loop on a chapter that already has prose. If the chapter has no Outline.md yet, use add-chapter first.
 ---
 
 # Draft & Review Cycle
 
 One invocation: outline in, reviewed chapter out. This replaces running
-`draft-chapter`, `reconcile-chapter`, and then the five review skills by hand.
+`draft-chapter`, `reconcile-chapter`, and then the default reviewer set by hand.
 
 The vault is a local folder — this skill operates directly on the files under
 it (no bridge or staging step needed when running against a local checkout).
@@ -164,33 +164,51 @@ count as fixing it.
 
 ## Phase 2 — Review round 1
 
-Run all five reviewers — `proofread`, `pacing-review`, `prose-review`,
-`continuity-reviewer`, `anti-ai-prose-review` — against the working copy and the
-bundle. See
-`references/review-protocol.md` for the exact prompt template, the
-suggested effort level per reviewer, and how to run them in parallel if your
-environment supports it (or sequentially if it doesn't — order doesn't
-matter, they're independent).
+Get the current default reviewer set, in run order:
+
+```bash
+python3 scripts/list_reviewers.py
+```
+
+This scans every sibling skill's `SKILL.md` frontmatter and prints the ones
+that declare `default-in-cycle: true`, sorted by `cycle-order` — as of this
+writing that's `continuity-reviewer`, `pacing-review`, `prose-review`,
+`anti-ai-prose-review`, `proofread`, in that order, but treat the script's
+output as the source of truth over any list written here, since adding or
+re-tuning a reviewer changes this set without touching this file. Run
+`--all` to see every reviewer (any skill declaring `reviewer-kind` in its
+frontmatter), including the opt-in ones.
+
+Run each reviewer in the printed set against the working copy and the
+bundle. See `references/review-protocol.md` for the exact prompt template
+and how to run them in parallel if your environment supports it (or
+sequentially if it doesn't — the default set has no dependency between its
+members *during a single round*; `cycle-order` reflects a preference, not a
+hard ordering requirement, for the case where a reviewer's findings are
+cheaper to hand to the next one already resolved, e.g. running structural
+checks before line-level ones).
 
 Every reviewer must be told: **report only, never edit**, and every finding needs
 an exact quoted string from the chapter plus a drafted replacement, marked
 IMPORTANT or MINOR. A finding without a quotable anchor can't become a diff.
 
-`anti-ai-prose-review` is in the set because its failure mode is the cheapest to
-introduce and the most expensive to notice late: it catches the tic-level tells
-(cadence loops, negative-setup-then-flip, stock reaction beats) that read as
-machine-written, and `prose-review` reliably misses them because it is judging
-craft rather than fingerprint. It is also the one reviewer whose findings are
-partly mechanical — run `scripts/scan_prose.py` from that skill first and hand
-its output to the reviewer, rather than making the model re-derive density
-counts it can compute exactly.
+`anti-ai-prose-review` is in the default set because its failure mode is the
+cheapest to introduce and the most expensive to notice late: it catches the
+tic-level tells (cadence loops, negative-setup-then-flip, stock reaction
+beats) that read as machine-written, and `prose-review` reliably misses them
+because it is judging craft rather than fingerprint. It is also the one
+reviewer whose findings are partly mechanical — run `scripts/scan_prose.py`
+from that skill first and hand its output to the reviewer, rather than
+making the model re-derive density counts it can compute exactly.
 
-Do not add `sanderson-review` to the set. The structural
-work is divided between the existing reviewers: `pacing-review` owns whether
-promise/progress/payoff is reader-visible and proportioned; `continuity-reviewer`
-owns whether every payoff obeys established capabilities, limitations, and
-current resource state. The prompt additions live in
-`references/review-protocol.md`.
+`sanderson-review` ships `default-in-cycle: false` and stays that way: the
+structural work is divided between the reviewers that are in the set —
+`pacing-review` owns whether promise/progress/payoff is reader-visible and
+proportioned; `continuity-reviewer` owns whether every payoff obeys
+established capabilities, limitations, and current resource state.
+`sanderson-review`'s own `SKILL.md` explains why it is meant for whole-arc
+audits instead. Do not flip it on for this per-chapter cycle. The prompt
+additions for the default set live in `references/review-protocol.md`.
 
 `continuity-reviewer`'s Cross-Artifact Fact Consistency check needs the
 chapter's own `Summary.md` in front of it to do its job — the bundle already
@@ -201,7 +219,7 @@ here, just don't strip it out when adapting the prompt template.
 
 ## Phase 3 — Apply as diffs
 
-Collect all five reports. Write a single patch file — one pass, all reviewers
+Collect all of round 1's reports. Write a single patch file — one pass, all reviewers
 together, so conflicting suggestions get resolved once:
 
 ```

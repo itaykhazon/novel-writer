@@ -1,11 +1,27 @@
 ---
 name: continuity-reviewer
 description: Check a manuscript chapter against the codex for continuity errors, including character traits, locations, timelines, plot threads, lore, any stat/progression-system rules, resource budgets, and whether climactic solutions obey established capabilities, limitations, and costs. Use when reviewing or revising a chapter, proofreading for continuity, checking lore consistency, verifying character or item state, ensuring plot beats resolve in order, checking timeline logic, or testing whether a mechanical payoff is earned.
+reviewer-kind: line
+reviewer-scope: chapter
+thinking-level: high
+complexity: 8
+default-in-cycle: true
+cycle-order: 1
 ---
 
 # Continuity Reviewer for Story Codex
 
 When you review a chapter for continuity, this skill reads the chapter text and cross-references every detail against your story's codex (characters, locations, plot, mechanics, species lore). It returns a structured list of issues: character trait mismatches, timeline breaks, forgotten plot threads, location state inconsistencies, and rule violations — each flagged by severity so you know what to fix first.
+
+## Scope and boundaries
+
+This reviewer owns facts: character/location/item state, timeline,
+plot-thread status, mechanical/system rules, and whether a payoff is
+factually earned. It does not own mechanical correctness (`proofread`),
+sentence-level craft or voice (`prose-review`, `prose-smell-review`), or
+model-shaped phrasing (`anti-ai-prose-review`) — a passage can be
+continuity-clean and still weak prose, and that's those reviewers' finding
+to make, not this one's.
 
 ## How to use
 

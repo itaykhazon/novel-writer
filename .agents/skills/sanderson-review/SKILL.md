@@ -2,6 +2,11 @@
 name: sanderson-review
 description: >-
   Review a chapter, chapter outline, arc plan, plot thread, or whole-book architecture using the project's Brandon Sanderson framework: promise-progress-payoff, functional beats, try-fail escalation, proactive/relatable/capable characters, motivation/personality/values, worldbuilding depth, mechanic limitations, and progression. Use when asked for a Sanderson review, plot-architecture audit, promise/payoff check, outline diagnosis before drafting, arc-level structural review, scene-progression analysis, payoff/setup check, or whether a planned climax is earned. Produce a report only; never edit manuscript, outline, or codex source files.
+reviewer-kind: structural
+reviewer-scope: arc
+thinking-level: high
+complexity: 8
+default-in-cycle: false
 ---
 
 # Sanderson Review

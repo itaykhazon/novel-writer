@@ -2,31 +2,47 @@
 
 ## Model / effort assignment
 
+Each reviewer's `SKILL.md` frontmatter carries its own `thinking-level`
+(`very-low` | `low` | `medium` | `high`) — that field, not this file, is the
+source of truth for how much reasoning effort to give it. Run
+`python3 scripts/list_reviewers.py --all` from `chapter-cycle/` to see every
+reviewer's `thinking-level` and `complexity` alongside its name, or read
+each reviewer's own `SKILL.md` directly.
+
 If your environment lets you choose a model or effort level per review pass,
-match it to how hard the job actually is — on the original run of this
-pipeline, using the same (expensive) setting for every reviewer by default
-was the single largest waste in the whole cycle.
+match it to that field — on the original run of this pipeline, using the
+same (expensive) setting for every reviewer by default was the single
+largest waste in the whole cycle. As of this writing the default set maps to
+`continuity-reviewer` (high), `pacing-review` (medium), `prose-review`
+(medium), `anti-ai-prose-review` (low), `proofread` (very-low) — but treat
+that as illustrative, not authoritative; a reviewer's own frontmatter is what
+changes when its cost/judgment load is retuned, not this list.
 
-| Reviewer | Suggested effort | Reasoning |
-|---|---|---|
-| `proofread` | cheapest/fastest available | Spelling, punctuation, agreement — pattern-matching against a fixed rulebook |
-| `pacing-review` | mid-tier | Structural judgment, but bounded by the outline's beat list |
-| `prose-review` | mid-tier | Craft judgment, bounded by the voice files in the bundle |
-| `anti-ai-prose-review` | cheapest/fastest available | `scan_prose.py` does the counting; the reviewer only judges which candidates cost the prose something |
-| `continuity-reviewer` | your best-reasoning tier | Cross-references many facts, including the chapter's own Summary and codex pages for numeric/tag drift (Cross-Artifact Fact Consistency) — the only one with a real reasoning load |
+`continuity-reviewer` is consistently the highest-effort reviewer in the
+default set because it cross-references many facts, including the chapter's
+own Summary and codex pages for numeric/tag drift (Cross-Artifact Fact
+Consistency) — the only default reviewer with a real reasoning load rather
+than a bounded pattern-match. `anti-ai-prose-review` stays cheap because
+`scan_prose.py` does the counting; the reviewer only judges which candidates
+actually cost the prose something.
 
-Escalate one reviewer to your top tier only if a specific chapter has an unusual
-demand (a new POV character, a mechanic being rewritten) — and say why in the
-changelog.
+Escalate one reviewer above its usual level only if a specific chapter has an
+unusual demand (a new POV character, a mechanic being rewritten) — and say
+why in the changelog.
 
-## Running the five reviewers
+## Running the reviewer set
 
-Run `proofread`, `pacing-review`, `prose-review`, `continuity-reviewer`, and
-`anti-ai-prose-review` against the drafted chapter. If your environment supports running multiple
-independent passes concurrently (parallel agent/session invocations), run all
-four at once — they're independent of each other and don't need to see one
-another's output. If it doesn't, run them one after another in any order;
-there's no dependency between them.
+Get the current default set, in run order, from `chapter-cycle/`:
+
+```bash
+python3 scripts/list_reviewers.py
+```
+
+Run each reviewer it prints against the drafted chapter. If your environment
+supports running multiple independent passes concurrently (parallel
+agent/session invocations), run them all at once — the default set has no
+hard dependency between its members within a single round. If it doesn't,
+run them one after another in the printed order.
 
 For each reviewer, give it exactly two things and nothing else: the chapter
 working copy, and the context bundle built in Phase 0. `anti-ai-prose-review`

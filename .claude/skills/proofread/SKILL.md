@@ -2,6 +2,12 @@
 name: proofread
 description: |
   Proofread fiction and novel chapters for grammar, spelling, and punctuation errors. Use whenever the user provides text that needs error-checking or asks to proofread, edit, check for typos, or review a chapter from their novel. Focus on mechanical errors (spelling, grammar, punctuation) while respecting intentional stylistic choices common in fiction. Outputs a markdown report with suggestions for the writer to review.
+reviewer-kind: line
+reviewer-scope: chapter
+thinking-level: very-low
+complexity: 1
+default-in-cycle: true
+cycle-order: 5
 ---
 
 # Proofreading Skill for Fiction
@@ -27,6 +33,17 @@ Focus on these core error categories:
 - Stylistic dialogue punctuation or dialect/accent writing
 - Factual accuracy, worldbuilding, continuity, or continuity issues
 - Word choice, tone, or narrative voice
+
+## Scope and boundaries
+
+This reviewer owns mechanical correctness only: spelling, grammar,
+punctuation, capitalization. Everything else is a sibling reviewer's job —
+`prose-review` owns sentence-craft and voice, `prose-smell-review` owns
+broader craft heuristics (vagueness, over-explaining, static scenes),
+`anti-ai-prose-review` owns model-shaped phrasing, `pacing-review` owns
+scene-level structure, and `continuity-reviewer` owns facts, lore, and
+timeline. If a passage is grammatically correct but reads flat, generic, or
+factually wrong, that is not this reviewer's finding to make.
 
 ## Where to Save
 

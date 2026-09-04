@@ -1,6 +1,11 @@
 ---
 name: target-audience-readthrough
 description: Simulate an honest, opinionated cold read of a chapter, arc, or the entire drafted story by one plausible genre-literate reader in this novel's actual target audience (see references/audience-model.md — genre-specific, fill in via populate-project or by hand). Use when the user asks for a target-audience readthrough, reader reaction, beta-reader opinion, engagement map, keep-reading or DNF assessment, or which segments were thrilling, boring, overlong, repetitive, underdeveloped, or a slog. Read only the requested manuscript prose and never use the codex, outlines, summaries, reviews, changelogs, frontmatter, author explanations, or other privileged context.
+reviewer-kind: reader-simulation
+reviewer-scope: book
+thinking-level: high
+complexity: 7
+default-in-cycle: false
 ---
 
 # Target-Audience Readthrough
@@ -8,6 +13,18 @@ description: Simulate an honest, opinionated cold read of a chapter, arc, or the
 Give the writer the experience of handing pages to a real target reader. React as one disclosed reader, not as an editor, a lore expert, or a statistical consensus.
 
 Read `references/audience-model.md` before every readthrough. Use its default persona unless the user specifies a different audience segment.
+
+## Scope and boundaries
+
+This reviewer owns one thing the six chapter-level reviewers can't: an
+honest simulation of what an actual target-audience reader experiences,
+unaided by any of the vault's privileged context. It does not check facts,
+craft, or mechanics — a chapter can pass every other reviewer and still
+read as boring, confusing, or a DNF to this one, and that gap is exactly
+what it's for. Because it deliberately can't see the codex or prior
+reviews, don't ask it to also fact-check or line-edit; hand any craft or
+continuity problem it surfaces to the reviewer that actually owns that
+territory.
 
 ## Protect the cold read
 

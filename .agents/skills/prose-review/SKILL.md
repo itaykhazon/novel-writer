@@ -2,6 +2,12 @@
 name: prose-review
 description: |
   Review fiction prose for craft-level style issues — narrative distance/filter words, free indirect discourse (how deeply narration sits inside the POV character's voice), sentence and paragraph rhythm, sensory range, concrete grounding of unfamiliar worldbuilding, and over-explained emotion. This is a STYLE/VOICE pass, distinct from proofread (grammar/spelling/punctuation) and continuity-reviewer (facts/lore/timeline). Use whenever the user asks to review, critique, or tighten the prose/voice/POV of a chapter, asks "does this sound too distant/flat," wants a deep-POV or free-indirect-discourse pass, or wants feedback on pacing/rhythm at the sentence level. Also use proactively after drafting a new chapter, alongside proofread and continuity-reviewer, as part of the standard review pass — even if the user only says "review this chapter" without naming prose specifically.
+reviewer-kind: line
+reviewer-scope: chapter
+thinking-level: medium
+complexity: 5
+default-in-cycle: true
+cycle-order: 3
 ---
 
 # Prose Review
@@ -13,6 +19,16 @@ This skill reviews prose craft — not grammar, not continuity, but the level be
 **Before applying any rule below, read `codex/Writing Style.md` and `codex/Craft Influences.md`** (if `populate-project` has been run, the latter holds this novel's actual comp titles/influences and what they mean for prose craft — research-backed, not guessed). This skill's rules are written to be genre- and POV-agnostic, but their *emphasis* should flex to match what those files actually declare: a novel written in first person present tense, an omniscient narrator, or a slow literary register needs this skill's judgment calls recalibrated accordingly, not applied as if every novel is close-third and fast.
 
 The craft principle every rule below is a variation on: is the narration doing its job invisibly, sitting inside the POV character's (or narrator's) voice — or is it visibly standing between the reader and the character (the thing deep-POV craft calls "narrative distance")? This applies whether the target style is spare and fast or dense and literary; only the *acceptable amount* of distance shifts with the declared style. Keep that frame in mind for edge cases the rules don't cover explicitly.
+
+## Scope and boundaries
+
+This reviewer owns sentence- and paragraph-level craft: narrative distance,
+free indirect discourse, rhythm, sensory range, over-explained emotion. Let
+`proofread` own mechanical correctness, `continuity-reviewer` own facts and
+timeline, `pacing-review` own scene-level structure, `prose-smell-review`
+own broader reader-effect heuristics, and `anti-ai-prose-review` own
+model-shaped phrase families specifically — a passage can be voice-perfect
+and still trip one of those.
 
 ## Rules and confidence tiers
 

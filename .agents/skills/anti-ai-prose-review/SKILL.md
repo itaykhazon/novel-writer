@@ -2,6 +2,12 @@
 name: anti-ai-prose-review
 description: >-
   Review fiction prose for recurring AI-shaped language and "AI slop": stock ChatGPT/Claude sentence frames, canned connectors, contrastive negation, templated emotional beats, vague pseudo-depth, false dramatic endings, uniform cadence, and model-favored phrase clusters. Use when the user asks whether prose sounds AI-written, wants AI-assisted prose cleaned up, asks for an anti-slop or human-voice pass, mentions Claude-isms/ChatGPT-isms, dislikes overly dramatic paragraph or scene endings, or wants a chapter checked for generic chatbot cadence. Produce an actionable markdown review with exact original anchors and voice-matched replacements; do not claim to determine authorship.
+reviewer-kind: line
+reviewer-scope: chapter
+thinking-level: low
+complexity: 3
+default-in-cycle: true
+cycle-order: 4
 ---
 
 # Anti-AI Prose Review
@@ -21,7 +27,7 @@ Review the surface prose for model-shaped repetition and replace generic machine
 
    Use `--json` if structured results help. The scan is a candidate finder, not a verdict. Inspect every hit and paragraph-ending candidate in context; ignore quoted examples, system text, frontmatter, and intentional repetition.
 
-## Scope
+## Scope and boundaries
 
 Own these questions:
 

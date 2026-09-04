@@ -219,8 +219,8 @@ chapter independently — each gets its own appended entry in its own
 
 ## Don't apply without a go-ahead, and iterate first
 
-Itay iterates on suggested rewrites before approving them — presenting a
-rewrite is not permission to write it. Wait for an explicit go-ahead
+The author iterates on suggested rewrites before approving them — presenting
+a rewrite is not permission to write it. Wait for an explicit go-ahead
 ("make that swap," "make the replacement") before touching the manuscript
 file, even when a review report already contains a fully drafted
 Replacement. Expect pushback on specific words or lines across a few
